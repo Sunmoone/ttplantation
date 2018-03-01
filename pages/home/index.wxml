@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="plant">
+    <view class='cell'>
+      <image src="./farm.jpg"></image>
+      <view class='top'>
+        {{plant.water}}ml
+      </view>
+      <view class='bottom'>
+        <text class='name'>{{plant.name}}</text>
+        <text class='envelope'>信箱</text>
+        <text class='watering'>浇水</text>
+      </view>
+    </view>
+    <view class='cell photos'>
+      种植里程<text>{{photos.length}}张</text>
+    </view>
+    <view class='cell my-tree'>
+      我的果树<text>></text>
+    </view>
+  </view>
+  <view class="rank">
+    <view class='title'>
+      排行榜.{{location}}
+    </view>
+    <view class='item' wx:key="{{index}}" wx:for="{{rankList}}">
+      {{index}} {{item.name}} <text class='water'>{{item.water}}ml</text>
+    </view>
+  </view>
+</view>

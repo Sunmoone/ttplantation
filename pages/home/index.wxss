@@ -1,0 +1,61 @@
+/**index.wxss**/
+.plant{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+}
+.plant .cell{
+  position: relative;
+}
+.plant .cell image{
+  width: 100%;
+}
+.plant .cell .top{
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+.plant .cell .bottom{
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.plant .cell .bottom .name{
+  float: left;
+}
+.plant .cell .bottom .envelope,
+.plant .cell .bottom .watering{
+  float: right;
+}
+.plant .cell{
+  border-bottom: 1px solid #f2f2f2;
+  line-height: 40px;
+}
+.plant .cell:last-child{
+  border:none;
+}
+.plant .cell.photos text{
+  float: right;
+}
+.plant .cell.my-tree text{
+  float: right;
+}
+
+
+.rank{
+  border-top: 10px solid #d3d3d3;
+  width: 100%;
+}
+.rank .title{
+  padding: 10px 10px 10px 0;
+  margin-left: 10px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.rank .item{
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.rank .item .water{
+  float: right;
+}

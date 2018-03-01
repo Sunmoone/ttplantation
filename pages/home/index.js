@@ -4,11 +4,30 @@ const app = getApp()
 
 Page({
   data: {
+    location: '中环广场',
     plant: {
+      name: '成县核桃',
       water: 500
     },
+    rankList:[{
+      name: 'miaomiao',
+      avatar: '',
+      water: 8000
+    }, {
+      name: 'haaaaa',
+      avatar: '',
+      water: 7500
+    }, {
+      name: 'kkkkkk',
+      avatar: '',
+      water: 6700
+    }],
     photos: [{
-      src: 'jfdksfsdlfdskl'
+      src: ''
+    }, {
+      src: ''
+    }, {
+      src: ''
     }]
   },
   //事件处理函数
