@@ -30,10 +30,14 @@ Page({
       src: ''
     }]
   },
-  //事件处理函数
-  bindViewTap: function() {
+  onPhotoCellTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../photo/index'
+    })
+  },
+  onMyTreeCellTap: function(){
+    wx.navigateTo({
+      url: '../my-tree/index',
     })
   },
   onLoad: function () {

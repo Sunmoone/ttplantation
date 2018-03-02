@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='item' wx:key="{{index}}" wx:for="{{trees}}">
+      <image></image>
+      <view>
+        <text>{{item.name}}</text>
+        <text>{{item.province}}.{{item.city}}</text>
+        <text>
+          {{item.days}}天，{{}}分钟，{{}}ml
+        </text>
+        <view>
+          <text>我还想要：</text>
+          <button>淘宝网</button>
+          <button>头条放心购</button>
+        </view>
+      </view>
+    </view>
+</view>

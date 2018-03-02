@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <text>我的相册</text>
+  <image wx:key="{{index}}" wx:for="{{rankList}}" src="{{item.src}}">
+  </image>
+</view>

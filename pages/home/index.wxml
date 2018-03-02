@@ -12,10 +12,10 @@
         <text class='watering'>浇水</text>
       </view>
     </view>
-    <view class='cell photos'>
+    <view class='cell photos' bindtap="onPhotoCellTap">
       种植里程<text>{{photos.length}}张</text>
     </view>
-    <view class='cell my-tree'>
+    <view class='cell my-tree' bindtap="onMyTreeCellTap">
       我的果树<text>></text>
     </view>
   </view>
