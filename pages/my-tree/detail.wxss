@@ -1,0 +1,7 @@
+/* pages/my-tree/detail.wxss */
+.container{
+  padding: 10px;
+}
+.container image{
+  width: 100%;
+}

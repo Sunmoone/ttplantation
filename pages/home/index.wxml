@@ -2,7 +2,7 @@
 <view class="container">
   <view class="plant">
     <view class='cell'>
-      <image src="./farm.jpg"></image>
+      <image src="./farm.jpg" bindtap="onPlantTap"></image>
       <view class='top'>
         {{plant.water}}ml
       </view>

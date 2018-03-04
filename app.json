@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/home/index",
     "pages/photo/index",
-    "pages/my-tree/index"
+    "pages/my-tree/index",
+    "pages/my-tree/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
