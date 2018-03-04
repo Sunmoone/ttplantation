@@ -1,6 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <text>我的相册</text>
-  <image wx:key="{{index}}" wx:for="{{rankList}}" src="{{item.src}}">
-  </image>
+  <scroll-view scroll-x="true" style="width: 100%">
+    <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
+      <image src="{{item.src}}"></image>
+      <text>{{item.date}}</text>
+    </view>
+  </scroll-view>
 </view>

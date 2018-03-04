@@ -1,0 +1,2 @@
+<!--components/avatar.wxml-->
+<image class='tt-avatar' src='{{src}}'></image>

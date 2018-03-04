@@ -1,0 +1,8 @@
+<!--pages/envelope/index.wxml-->
+<view class='container'>
+  <view wx:key="{{index}}" wx:for="{{envelopes}}">
+    <text>[ ] [ ] [ ] [ ] [ ]</text>
+    <text class='content'>{{content}}</text>
+    <text class='from'>来自：{{from}}</text>
+  </view>
+</view>
