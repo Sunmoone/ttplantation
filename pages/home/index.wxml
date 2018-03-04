@@ -8,8 +8,11 @@
       </view>
       <view class='bottom'>
         <text class='name'>{{plant.name}}</text>
-        <text class='envelope'>信箱</text>
-        <text class='watering'>浇水</text>
+        <button bindtap='onBtnTap'>领取果实</button>
+        <view class='envelope' bindtap='onEnvelopeTap'>
+          <tt-icon id="envelope" type="envelope"></tt-icon>
+          <text>信箱</text>
+        </view>
       </view>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
@@ -24,7 +27,7 @@
       排行榜.{{location}}
     </view>
     <view class='item' wx:key="{{index}}" wx:for="{{rankList}}">
-      {{index}} {{item.name}} <text class='water'>{{item.water}}ml</text>
+      {{index+1}} <tt-avatar src="http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg"></tt-avatar> {{item.name}} <text class='water'>{{item.water}}ml</text>
     </view>
   </view>
 </view>

@@ -1,16 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/index",
     "pages/photo/index",
     "pages/my-tree/index",
-    "pages/my-tree/detail"
+    "pages/my-tree/detail",
+    "pages/envelope/index",
+    "pages/receive/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "头条种植园",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

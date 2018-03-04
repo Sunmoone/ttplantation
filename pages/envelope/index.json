@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "信箱",
+  "usingComponents": {
+    "tt-icon": "/components/icon"
+  }
+}

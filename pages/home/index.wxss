@@ -17,11 +17,22 @@
 }
 .plant .cell .bottom{
   bottom: 10px;
-  left: 0;
-  right: 0;
+  left: 10px;
+  right: 10px;
   position: absolute;
 }
+.plant .cell .bottom text{
+  line-height: 20px;
+}
 .plant .cell .bottom .name{
+  float: left;
+  margin-right: 10px;
+}
+.plant .cell .bottom button{
+  width: auto;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
   float: left;
 }
 .plant .cell .bottom .envelope,
@@ -55,6 +66,10 @@
 .rank .item{
   margin-top: 10px;
   padding: 0 10px;
+}
+.rank .item tt-avatar{
+  position: relative;
+  top: 10px;
 }
 .rank .item .water{
   float: right;

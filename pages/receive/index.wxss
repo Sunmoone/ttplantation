@@ -1,0 +1,30 @@
+/* pages/receive/index.wxss */
+.form{
+
+}
+.form .form-item{
+  padding: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+}
+.form .form-item .form-label{
+  min-width: 60px;
+}
+.form .form-item .form-control{
+  flex:1;
+}
+.form .form-item picker text{
+  font-size: #999;
+}
+
+.btn-wrap{
+  width: 100%;
+  padding:10px;
+}
+.btn-wrap button{
+  width:100%;
+  margin: 10px 0;
+  line-height: 30px;
+  display: block;
+  background: #b3b3b3;
+}

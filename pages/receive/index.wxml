@@ -1,0 +1,26 @@
+<!--pages/receive/index.wxml-->
+<view class='container'>
+  <view class='form'>
+    <view class='form-item'>
+      <text class='form-label'>收货人</text>
+      <input placeholder='请输入收货人姓名' bindinput='onNameInput'></input>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>联系电话</text>
+      <input type='number' placeholder='请输入联系电话' bindinput='onMobileInput'></input>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>所在地区</text>
+      <picker mode="region" bindchange="onRegionChange" value="{{region}}">
+        <text>请选择所在地区</text>
+      </picker>
+    </view>
+    <view class='form-item'>
+      <text class='form-label'>详细地址</text>
+      <textarea placeholder='请输入详细地址信息，如道路、门牌号、小区、楼栋号、单元室等等' bindinput='onAddressInput'></textarea>
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <button bindtap='onSubmit'>填写完成</button>
+  </view>
+</view>
