@@ -1,15 +1,12 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='container'>
+  <image src='./world.jpg'></image>
+  <view class='site' bindtap='onSiteTap'>
+    <image src='../../images/apple.jpg' catchtap='onPlantTap'></image>
+    <text>甘肃 二郎山</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">
-      哈哈哈哈
-    </text>
-  </view>
+  <text>
+    在遥远的山区拥有一棵自己的果树？今日头条联合贵州小西山、甘肃嬉戏谷，推出『头条种植园』，收集能量，给植物浇水，历经发芽、生长、开花和结果，你就能收到山区寄来的真正果实！
+    快来选择一棵属于自己的果树
+  </text>
 </view>

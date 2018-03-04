@@ -1,4 +1,10 @@
 /**app.wxss**/
+page{
+  border-top: 1px solid #f2f2f2;
+}
+view{
+  box-sizing: border-box;
+}
 .container {
   height: 100%;
   display: flex;
@@ -7,4 +13,9 @@
   justify-content: space-between;
   box-sizing: border-box;
   background: white;
+
+  font-size: 12px;
 } 
+button{
+  font-size:12px;
+}

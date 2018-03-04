@@ -1,9 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-    wx.redirectTo({
-      url: './pages/home/index',
-    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

@@ -6,7 +6,8 @@
     "pages/photo/index",
     "pages/my-tree/index",
     "pages/my-tree/detail",
-    "pages/envelope/index"
+    "pages/envelope/index",
+    "pages/receive/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

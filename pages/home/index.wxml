@@ -8,6 +8,7 @@
       </view>
       <view class='bottom'>
         <text class='name'>{{plant.name}}</text>
+        <button bindtap='onBtnTap'>领取果实</button>
         <view class='envelope' bindtap='onEnvelopeTap'>
           <tt-icon id="envelope" type="envelope"></tt-icon>
           <text>信箱</text>

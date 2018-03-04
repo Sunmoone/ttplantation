@@ -1,8 +1,11 @@
 <!--pages/envelope/index.wxml-->
 <view class='container'>
-  <view wx:key="{{index}}" wx:for="{{envelopes}}">
+  <view class='item' wx:key="{{index}}" wx:for="{{envelopes}}">
     <text>[ ] [ ] [ ] [ ] [ ]</text>
-    <text class='content'>{{content}}</text>
-    <text class='from'>来自：{{from}}</text>
+    <image class="stamp" src="../../images/stamp.png"></image>
+    <text class='content'>
+    {{item.content}}
+    </text>
+    <text class='from'>来自：{{item.from}}</text>
   </view>
 </view>

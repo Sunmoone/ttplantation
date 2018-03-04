@@ -21,7 +21,18 @@
   right: 10px;
   position: absolute;
 }
+.plant .cell .bottom text{
+  line-height: 20px;
+}
 .plant .cell .bottom .name{
+  float: left;
+  margin-right: 10px;
+}
+.plant .cell .bottom button{
+  width: auto;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
   float: left;
 }
 .plant .cell .bottom .envelope,

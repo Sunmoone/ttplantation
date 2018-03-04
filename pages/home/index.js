@@ -50,5 +50,10 @@ Page({
     wx.navigateTo({
       url: '../envelope/index',
     })
+  }, 
+  onBtnTap: function(){
+    wx.navigateTo({
+      url: '../receive/index',
+    })
   }
 })
