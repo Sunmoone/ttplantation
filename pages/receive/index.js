@@ -7,13 +7,16 @@ Page({
   data: {
     name: '',
     mobile: '',
-    city: 'bj',
-    region: ['北京市', '北京市', '东城区'],
+    address: '',
+    region: [],
   },
   onSubmit: function(){
     const {name, mobile, region, address} = this.data
     if(!name||!mobile||!region||!address){
-      console.log('请填写完整的收货人信息')
+      wx.showToast({
+        icon: 'none',
+        title: '请填写完整的收货人信息',
+      })
       return false
     }
     const requestTask = wx.request({

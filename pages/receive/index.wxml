@@ -12,7 +12,8 @@
     <view class='form-item'>
       <text class='form-label'>所在地区</text>
       <picker mode="region" bindchange="onRegionChange" value="{{region}}">
-        <text>请选择所在地区</text>
+        <text wx:if="{{region[0]&&region[1]&&region[2]}}">{{region[0]}} {{region[1]}} {{region[2]}}</text>
+        <text wx:else>请选择所在地区</text>
       </picker>
     </view>
     <view class='form-item'>
