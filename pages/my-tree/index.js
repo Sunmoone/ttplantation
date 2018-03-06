@@ -21,5 +21,15 @@ Page({
     wx.navigateTo({
       url: '../my-tree/detail',
     })
+  },
+  onShopTap: function(){
+    wx.navigateTo({
+      url: '/pages/my-tree/toutiao',
+    })
+  },
+  onTaobaoTap: function(){
+    wx.navigateTo({
+      url: '/pages/my-tree/taobao',
+    })
   }
 })

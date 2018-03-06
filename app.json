@@ -7,7 +7,9 @@
     "pages/my-tree/index",
     "pages/my-tree/detail",
     "pages/envelope/index",
-    "pages/receive/index"
+    "pages/receive/index",
+    "pages/envelope/detail",
+    "pages/my-tree/taobao"
   ],
   "window": {
     "backgroundTextStyle": "light",

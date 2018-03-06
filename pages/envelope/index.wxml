@@ -1,6 +1,6 @@
 <!--pages/envelope/index.wxml-->
 <view class='container'>
-  <view class='item' wx:key="{{index}}" wx:for="{{envelopes}}">
+  <view class='item' wx:key="{{index}}" wx:for="{{envelopes}}" bindtap='onItemTap'>
     <text>[ ] [ ] [ ] [ ] [ ]</text>
     <image class="stamp" src="../../images/stamp.png"></image>
     <text class='content'>

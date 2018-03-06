@@ -1,9 +1,13 @@
 <!--index.wxml-->
 <view class='container'>
   <image src='./world.jpg'></image>
-  <view class='site' bindtap='onSiteTap'>
-    <image src='../../images/apple.jpg' catchtap='onPlantTap'></image>
+  <view class='site walnut' bindtap='onSiteTap'>
+    <image src='/images/walnut.jpg' catchtap='onPlantTap'></image>
     <text>甘肃 二郎山</text>
+  </view>
+  <view class='site apple' bindtap='onSiteTap'>
+    <image src='/images/apple.jpg' catchtap='onPlantTap'></image>
+    <text>甘肃 川坝河谷</text>
   </view>
   <text>
     在遥远的山区拥有一棵自己的果树？今日头条联合贵州小西山、甘肃嬉戏谷，推出『头条种植园』，收集能量，给植物浇水，历经发芽、生长、开花和结果，你就能收到山区寄来的真正果实！

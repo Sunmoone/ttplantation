@@ -38,6 +38,17 @@
 .plant .cell .bottom .envelope,
 .plant .cell .bottom .watering{
   float: right;
+  margin-right: 10rpx;
+}
+.plant .cell .bottom .envelope tt-icon{
+  position: absolute;
+  bottom: 70rpx;
+  right: 15rpx;
+}
+.plant .cell .bottom .watering tt-icon{
+  position: absolute;
+  bottom: 75rpx;
+  right: 75rpx;
 }
 .plant .cell{
   border-bottom: 1px solid #f2f2f2;
@@ -49,8 +60,18 @@
 .plant .cell.photos text{
   float: right;
 }
+.plant .cell.photos tt-icon{
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
 .plant .cell.my-tree text{
   float: right;
+}
+.plant .cell.my-tree tt-icon{
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
 }
 
 
@@ -64,12 +85,15 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .rank .item{
-  margin-top: 10px;
   padding: 0 10px;
+  line-height: 40px;
 }
-.rank .item tt-avatar{
-  position: relative;
-  top: 10px;
+.rank .item tt-avatar image{
+  width:20px;
+  height:20px;
+  border-radius:20px;
+  position:relative;
+  top:7px;
 }
 .rank .item .water{
   float: right;

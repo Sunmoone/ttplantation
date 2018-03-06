@@ -5,14 +5,14 @@
       <view class="right">
         <text class="name">{{item.name}}
         </text>
-        <text class="location">{{item.province}}.{{item.city}}
+        <text class="location"><tt-icon type='location'></tt-icon>{{item.province}}.{{item.city}}
         </text>
-        <text class="days">{{days}}天
+        <text class="days"><tt-icon type='report'></tt-icon>{{days}}天
         </text>
         <view class="purchase">
           <text>我还想要：</text>
-          <button>头条放心购</button>
-          <button>淘宝网</button>
+          <button catchtap='onShopTap'>头条放心购</button>
+          <button catchtap='onTaobaoTap'>淘宝网</button>
         </view>
       </view>
     </view>

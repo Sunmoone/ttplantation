@@ -1,7 +1,10 @@
 /* components/imgicon.wxss */
-.tt-icon{
+tt-icon{
+  display: inline-block;
   width: 20px;
   height: 20px;
-  display: block;
-  margin: 0;
+}
+tt-icon image{
+  width: 20px;
+  height: 20px;
 }

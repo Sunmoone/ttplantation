@@ -1,0 +1,13 @@
+<!--pages/envelope/detail.wxml-->
+<view class='container'>
+  <image src='./detail.jpeg'></image>
+  <view class='card'>
+    <text class='title'>
+      {{title}}
+    </text>
+    <text class='content'>
+      {{content}}
+    </text>
+    <tt-icon type='share' bindtap='onShareTap'></tt-icon>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/my-tree/taobao.wxml-->
+<web-view src="https://www.taobao.com/"></web-view>

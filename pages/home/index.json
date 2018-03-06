@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "头条种植园"
+  "navigationBarTitleText": "头条种植园",
+  "usingComponents": {
+    "tt-avatar":"/components/avatar",
+    "tt-icon":"/components/icon"
+  }
 }

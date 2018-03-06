@@ -1,0 +1,20 @@
+/* pages/envelope/detail.wxss */
+image{
+  width: 100%;
+}
+.card{
+  padding: 10px;
+  border: 2px solid #999;
+}
+.card .title{
+  font-weight: bold;
+  line-height: 20px;
+  font-size: 14px;
+}
+.card .content{
+  position: relative;
+}
+.card tt-icon{
+  float: right;
+  margin: 10px;
+}

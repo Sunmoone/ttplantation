@@ -10,16 +10,20 @@
         <text class='name'>{{plant.name}}</text>
         <button bindtap='onBtnTap'>领取果实</button>
         <view class='envelope' bindtap='onEnvelopeTap'>
-          <tt-icon id="envelope" type="envelope"></tt-icon>
-          <text>信箱</text>
+          <tt-icon type="envelope"></tt-icon><text>信箱</text>
+        </view>
+        <view wx:if='{{hasWatering===false}}' class='watering' bindtap='onWateringTap'>
+          <tt-icon type='watering'></tt-icon><text>浇水</text>
         </view>
       </view>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
-      种植里程<text>{{photos.length}}张</text>
+      <tt-icon type='img'></tt-icon>种植里程
+      <text>{{photos.length}}张</text>
     </view>
     <view class='cell my-tree' bindtap="onMyTreeCellTap">
-      我的果树<text>></text>
+      <tt-icon type='tree'></tt-icon>我的果树
+      <text>></text>
     </view>
   </view>
   <view class="rank">

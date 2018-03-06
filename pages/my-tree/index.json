@@ -1,3 +1,6 @@
 {
-"navigationBarTitleText": "我的果树"
+  "navigationBarTitleText": "我的果树",
+  "usingComponents": {
+    "tt-icon":"/components/icon"
+  }
 }

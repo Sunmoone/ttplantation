@@ -7,7 +7,6 @@
   width: 100%;
 }
 .container .site{
-  background: #f2f2f2;
   position: absolute;
   top: 30px;
   right: 30px;
@@ -21,4 +20,12 @@
   height: 30px;
   display: block;
   margin: 0 auto;
+}
+.container .site.walnut{
+  top: 150rpx;
+  right: 30rpx;
+}
+.container .site.apple{
+  top: 300rpx;
+  left: 60rpx;
 }

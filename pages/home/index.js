@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    hasWatering: false,
     location: '中环广场',
     plant: {
       name: '成县核桃',
@@ -51,6 +52,15 @@ Page({
       url: '../envelope/index',
     })
   }, 
+  onWateringTap: function(){
+    this.setData({
+      hasWatering: true
+    })
+    wx.showToast({
+      title: '为好友浇水成功',
+      icon: 'none'
+    })
+  },
   onBtnTap: function(){
     wx.navigateTo({
       url: '../receive/index'
