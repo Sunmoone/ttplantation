@@ -4,13 +4,31 @@
   width: 100%;
 }
 .container .item{
-  float: left;
-  text-align: center;
   font-size: 12px;
-  width: 100px;
+  width: 50%;
+}
+.container .item:nth-child(2n+1){
+  margin-right: 50%;
+  padding-right: 40rpx;
+  border-right: 1px solid #000;
+  text-align: right;
+}
+.container .item:nth-child(2n+1) image{
+  float: right;
+}
+.container .item:nth-child(2n){
+  margin-left: 50%;
+  padding-left: 40rpx;
+  border-left: 1px solid #000;
+  position: relative;
+  left: -1px;
+  text-align: left;
+}
+.container .item:nth-child(2n) image{
+  float: left;
 }
 .container .item image{
-  width: 80px;
-  height: 80px;
+  width: 160rpx;
+  height: 160rpx;
   display: block;
 }

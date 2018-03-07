@@ -1,9 +1,10 @@
 <!--index.wxml-->
 <view class="container">
-  <view scroll-x="true" style="width: 1000rpx">
+  <image class='banner' src='./banner.jpg'></image>
     <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
-      <image src="{{item.src}}"></image>
       <text>{{item.date}}</text>
+      <view>
+        <image src="{{item.src}}"></image>
+      </view>
     </view>
-  </view>
 </view>

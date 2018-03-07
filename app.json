@@ -13,8 +13,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "头条种植园",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   }
 }
