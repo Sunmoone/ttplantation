@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <scroll-view scroll-x="true" style="width: 100%">
+  <view scroll-x="true" style="width: 1000rpx">
     <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
       <image src="{{item.src}}"></image>
       <text>{{item.date}}</text>
     </view>
-  </scroll-view>
+  </view>
 </view>
