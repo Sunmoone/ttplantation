@@ -7,7 +7,7 @@ Page({
     hasWatering: false,
     location: '中环广场',
     plant: {
-      name: '成县核桃',
+      name: '甘肃川坝河谷.苹果园',
       water: 500
     },
     rankList:[{

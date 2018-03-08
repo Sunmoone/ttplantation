@@ -14,8 +14,8 @@ view{
   box-sizing: border-box;
   background: white;
 
-  font-size: 12px;
+  font-size: 14px;
 } 
 button{
-  font-size:12px;
+  font-size:14px;
 }

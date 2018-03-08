@@ -2,18 +2,42 @@
 .plant{
   width: 100%;
   box-sizing: border-box;
-  padding: 0 10px 0 10px;
 }
 .plant .cell{
   position: relative;
 }
-.plant .cell image{
+.plant .cell .bg{
   width: 100%;
+  height: 353px;
 }
 .plant .cell .top{
     top: 0;
+    left: 0;
     right: 0;
+    width: 100%;
     position: absolute;
+}
+.plant .cell .top .name{
+  color: rgb(0, 95, 39);
+  float: left;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 46rpx 0 0 40rpx;
+}
+.plant .cell .top .energy{
+  float: right;
+  margin: 28rpx 40rpx 0 0;
+  position: relative;
+}
+.plant .cell .top .energy image{
+  width: 350rpx;
+  height: 32rpx;
+}
+.plant .cell .top .energy text{
+  position:absolute;
+  right:15rpx;
+  top:-5rpx;
+  font-size:10px;
 }
 .plant .cell .bottom{
   bottom: 10px;
@@ -52,10 +76,13 @@
 }
 .plant .cell{
   border-bottom: 1px solid #f2f2f2;
-  line-height: 40px;
+  line-height: 82rpx;
+  margin: 0 36rpx;
 }
-.plant .cell:last-child{
+.plant .cell.img{
+  height: 353px;
   border:none;
+  margin: 0;
 }
 .plant .cell.photos text{
   float: right;
@@ -76,25 +103,30 @@
 
 
 .rank{
-  border-top: 10px solid #d3d3d3;
+  border-top: 10px solid rgb(245, 245, 245);
   width: 100%;
 }
 .rank .title{
-  padding: 10px 10px 10px 0;
-  margin-left: 10px;
+  padding: 0 20px;
+  line-height: 92rpx;
+  font-size: 16px;
   border-bottom: 1px solid #f2f2f2;
 }
 .rank .item{
-  padding: 0 10px;
-  line-height: 40px;
+  margin: 0 0 0 20px;
+  line-height: 120rpx;
+  padding-right: 20px;
+  border-bottom: 1px solid rgb(241, 241, 241);
 }
 .rank .item tt-avatar image{
-  width:20px;
-  height:20px;
-  border-radius:20px;
+  width:76rpx;
+  height:76rpx;
+  border-radius:8rpx;
   position:relative;
-  top:7px;
+  top: 30rpx;
+  margin: 0 20rpx;
 }
 .rank .item .water{
   float: right;
+  line-height: 132rpx;
 }

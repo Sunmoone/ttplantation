@@ -1,16 +1,21 @@
 <!--index.wxml-->
 <view class='container'>
-  <image src='./world.jpg'></image>
-  <view class='site walnut' bindtap='onSiteTap'>
-    <image src='/images/walnut.jpg' catchtap='onPlantTap'></image>
+  <image src='./world.png'></image>
+  <view class='site walnut'>
+    <image src='./walnut.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 二郎山</text>
+    <button bindtap='onPlantTap'>我要种核桃</button>
   </view>
-  <view class='site apple' bindtap='onSiteTap'>
-    <image src='/images/apple.jpg' catchtap='onPlantTap'></image>
+  <view class='site apple'>
+    <image src='./apple.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 川坝河谷</text>
+    <button bindtap='onPlantTap'>我要种苹果</button>
   </view>
-  <text>
-    在遥远的山区拥有一棵自己的果树？今日头条联合贵州小西山、甘肃嬉戏谷，推出『头条种植园』，收集能量，给植物浇水，历经发芽、生长、开花和结果，你就能收到山区寄来的真正果实！
-    快来选择一棵属于自己的果树
-  </text>
+  <view class='intro'>
+    <text class='title'>在遥远的山区拥有<br/>一棵属于自己的果树？</text>
+    <text class='detail'>今日头条联合甘肃礼县、甘肃成县，退出"头条植物园"，用每天的阅读时间兑换能量，给植物浇水，历经发芽、生长、开花和结果，你就能收到山区寄来的真实果实！
+    </text>
+    <text class='tip'>👏 快来选择一颗属于你自己的果树！</text>
+    <text class='tip'>点击地点查看种植地详情，点击按钮种植果树</text>
+  </view>
 </view>

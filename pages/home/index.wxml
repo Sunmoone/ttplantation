@@ -1,25 +1,19 @@
 <!--index.wxml-->
 <view class="container">
   <view class="plant">
-    <view class='cell'>
-      <image src="./farm.jpg" bindtap="onPlantTap"></image>
+    <view class='cell img'>
+      <image class='bg' src="./group5.png" bindtap="onPlantTap"></image>
       <view class='top'>
-        {{plant.water}}ml
-      </view>
-      <view class='bottom'>
         <text class='name'>{{plant.name}}</text>
-        <button bindtap='onBtnTap'>领取果实</button>
-        <view class='envelope' bindtap='onEnvelopeTap'>
-          <tt-icon type="envelope"></tt-icon><text>信箱</text>
-        </view>
-        <view wx:if='{{hasWatering===false}}' class='watering' bindtap='onWateringTap'>
-          <tt-icon type='watering'></tt-icon><text>浇水</text>
+        <view class='energy'>
+          <image src='./group10.png'></image>
+          <text>{{plant.water}}ml/5000ml</text>
         </view>
       </view>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
-      <tt-icon type='img'></tt-icon>种植里程
-      <text>{{photos.length}}张</text>
+      <tt-icon type='img'></tt-icon>种植历程
+      <text>{{photos.length}} ></text>
     </view>
     <view class='cell my-tree' bindtap="onMyTreeCellTap">
       <tt-icon type='tree'></tt-icon>我的果树

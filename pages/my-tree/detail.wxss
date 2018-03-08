@@ -1,12 +1,26 @@
 /* pages/my-tree/detail.wxss */
 .container{
-  padding: 10px;
+  padding: 72rpx 80rpx;
 }
 .container .title{
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgb(34, 34, 34);
+}
+.container text{
+  color: rgb(102,102,102);
   font-size: 14px;
+  line-height: 20px;
+}
+.container .subtitle{
+  font-size: 14px;
+  color: rgb(34, 34, 34);
+  margin: 30rpx 0 10rpx 0;
+  display: block;
 }
 .container image{
   width: 100%;
+  margin: 20rpx 0;
 }

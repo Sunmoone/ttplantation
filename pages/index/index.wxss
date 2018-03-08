@@ -1,10 +1,10 @@
 /**index.wxss**/
 .container{
   position: relative;
-  padding: 10px;
 }
-.container image{
+.container image.world{
   width: 100%;
+  height: 340px;
 }
 .container .site{
   position: absolute;
@@ -16,16 +16,49 @@
   padding: 10px 0 0 0;
 }
 .container .site image{
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 70px;
   display: block;
   margin: 0 auto;
+  border-radius: 50%;
 }
 .container .site.walnut{
-  top: 150rpx;
-  right: 30rpx;
+  top: 59rpx;
+  right: 60rpx;
 }
 .container .site.apple{
-  top: 300rpx;
-  left: 60rpx;
+  top: 98rpx;
+  left: 62rpx;
+}
+.container .site text{
+  font-size: 14px;
+  font-weight: 20;
+  color: #a1;
+}
+.container .site button{
+  background: rgb(1, 167, 68);
+  color: #fff;
+  font-size: 12px;
+  line-height: 25px;
+  width: 86px;
+  border-radius: 100px;
+  padding: 0;
+  margin-top: 10rpx;
+}
+.container .intro{
+  padding: 0 80rpx 80rpx 80rpx;
+}
+.container .intro .title{
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
+}
+.container .intro .detail{
+  margin-top: 36rpx;
+  display: block;
+}
+.container .intro .tip{
+  margin-top: 18rpx;
+  display: block;
+  font-weight: bold;
 }
