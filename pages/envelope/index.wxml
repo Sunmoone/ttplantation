@@ -1,11 +1,12 @@
 <!--pages/envelope/index.wxml-->
 <view class='container'>
-  <view class='item' wx:key="{{index}}" wx:for="{{envelopes}}" bindtap='onItemTap'>
-    <text>[ ] [ ] [ ] [ ] [ ]</text>
-    <image class="stamp" src="../../images/stamp.png"></image>
-    <text class='content'>
-    {{item.content}}
-    </text>
-    <text class='from'>来自：{{item.from}}</text>
+  <image class='banner' src='./banner.png'></image>
+  <view class='list'>
+    <view class='item' wx:key="{{index}}" wx:for="{{envelopes}}" bindtap='onItemTap'>
+      <text class='content'>{{item.content}}</text>
+      <text class='date-from'>{{item.date}}
+      来自：{{item.from}}</text>
+    </view>
   </view>
+  <text class='no-more'>暂无更多信件</text>
 </view>

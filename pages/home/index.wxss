@@ -5,6 +5,14 @@
 }
 .plant .cell{
   position: relative;
+  border-bottom: 1px solid #f2f2f2;
+  line-height: 82rpx;
+  margin: 0 36rpx;
+}
+.plant .cell.img{
+  height: 353px;
+  border:none;
+  margin: 0;
 }
 .plant .cell .bg{
   width: 100%;
@@ -39,51 +47,18 @@
   top:-5rpx;
   font-size:10px;
 }
-.plant .cell .bottom{
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+.plant .cell.img tt-icon{
   position: absolute;
+  bottom: 130rpx;
+  left: 100rpx;
+  width: 66rpx;
+  height: 50rpx;
 }
-.plant .cell .bottom text{
-  line-height: 20px;
+.plant .cell.img tt-icon image{
+  width: 100%;
+  height: 100%;
 }
-.plant .cell .bottom .name{
-  float: left;
-  margin-right: 10px;
-}
-.plant .cell .bottom button{
-  width: auto;
-  height: 20px;
-  line-height: 20px;
-  font-size: 12px;
-  float: left;
-}
-.plant .cell .bottom .envelope,
-.plant .cell .bottom .watering{
-  float: right;
-  margin-right: 10rpx;
-}
-.plant .cell .bottom .envelope tt-icon{
-  position: absolute;
-  bottom: 70rpx;
-  right: 15rpx;
-}
-.plant .cell .bottom .watering tt-icon{
-  position: absolute;
-  bottom: 75rpx;
-  right: 75rpx;
-}
-.plant .cell{
-  border-bottom: 1px solid #f2f2f2;
-  line-height: 82rpx;
-  margin: 0 36rpx;
-}
-.plant .cell.img{
-  height: 353px;
-  border:none;
-  margin: 0;
-}
+
 .plant .cell.photos text{
   float: right;
 }
@@ -129,4 +104,46 @@
 .rank .item .water{
   float: right;
   line-height: 132rpx;
+}
+
+
+.invite{
+  margin: 60rpx auto 0 auto;
+}
+.invite text{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.invite text.code{
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(34, 34, 34);
+}
+.invite text.my-code{
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+  margin-top: 4rpx;
+}
+.invite text.tip{
+  margin-top: 4rpx;
+  font-size: 12px;
+  color: rgb(34, 34, 34);
+}
+.invite input{
+  width: 680rpx;
+  line-height: 88rpx;
+  height: 88rpx;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 56rpx;
+  border: 2px solid rgb(24, 217, 111);
+  border-radius: 200rpx;
+}
+.bottom-img{
+  margin-top: 120rpx;
+  width: 100%;
+  height: 80rpx;
+  position: relative;
+  top: 1px;
 }

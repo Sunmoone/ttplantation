@@ -10,6 +10,7 @@
           <text>{{plant.water}}ml/5000ml</text>
         </view>
       </view>
+      <tt-icon type='envelope' bindtap='onEnvelopeTap'></tt-icon>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
       <tt-icon type='img'></tt-icon>种植历程
@@ -28,4 +29,11 @@
       {{index+1}} <tt-avatar src="http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg"></tt-avatar> {{item.name}} <text class='water'>{{item.water}}ml</text>
     </view>
   </view>
+  <view class="invite">
+    <text class='code'>64712932</text>
+    <text class='my-code'>我的邀请码</text>
+    <text class='tip'>每邀请一个好友可获得10ml能量</text>
+    <input placeholder='请输入好友邀请码' bindinput='onNameInput'></input>
+  </view>
+  <image class='bottom-img' src='./bottom-img.png'></image>
 </view>

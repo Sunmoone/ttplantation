@@ -1,10 +1,12 @@
 <!--index.wxml-->
 <view class="container">
-  <image class='banner' src='./banner.jpg'></image>
-    <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
-      <text>{{item.date}}</text>
-      <view>
-        <image src="{{item.src}}"></image>
-      </view>
+  <image class='banner' src='./banner.png'></image>
+  <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
+    <view class='dot'></view>
+    <text>{{item.date}}</text>
+    <view>
+      <image src="{{item.src}}"></image>
     </view>
+  </view>
+  <text class='no-more'>暂无更多历程</text>
 </view>
