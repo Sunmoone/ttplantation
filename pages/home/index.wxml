@@ -2,7 +2,8 @@
 <view class="container">
   <view class="plant">
     <view class='cell img'>
-      <image class='bg' src="./group5.png" bindtap="onPlantTap"></image>
+      <image class='bg' src="./bg.png" bindtap="onPlantTap"></image>
+      <image class='tree {{tree}}' src='/images/{{tree}}.png'></image>
       <view class='top'>
         <text class='name'>{{plant.name}}</text>
         <view class='energy'>
@@ -10,23 +11,31 @@
           <text>{{plant.water}}ml/5000ml</text>
         </view>
       </view>
-      <tt-icon type='envelope' bindtap='onEnvelopeTap'></tt-icon>
+      <button class='button'>再种一棵树</button>
+      <tt-icon type='envelope' catchtap='onEnvelopeTap'></tt-icon>
+      <energy-ball num="50"></energy-ball>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
       <tt-icon type='img'></tt-icon>种植历程
-      <text>{{photos.length}} ></text>
+      <text>{{photos.length}}</text>
+      <tt-icon class='arrow' type='arrow'></tt-icon>
     </view>
     <view class='cell my-tree' bindtap="onMyTreeCellTap">
       <tt-icon type='tree'></tt-icon>我的果树
-      <text>></text>
+      <tt-icon type='arrow' class='arrow'></tt-icon>
     </view>
   </view>
   <view class="rank">
     <view class='title'>
-      排行榜.{{location}}
+      好友排名
     </view>
     <view class='item' wx:key="{{index}}" wx:for="{{rankList}}">
-      {{index+1}} <tt-avatar src="http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg"></tt-avatar> {{item.name}} <text class='water'>{{item.water}}ml</text>
+      {{index+1}} 
+      <tt-avatar src="http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg"></tt-avatar> 
+      {{item.name}} 
+      <view class='water'>
+        <tt-icon type='watering'></tt-icon>{{item.water}}ml
+      </view>
     </view>
   </view>
   <view class="invite">

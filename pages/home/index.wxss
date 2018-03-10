@@ -18,6 +18,27 @@
   width: 100%;
   height: 353px;
 }
+.plant .cell .tree{
+  width: 90rpx;
+  height: 82rpx;
+  position: absolute;
+  bottom: 85rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto; 
+}
+.plant .cell .tree.leaf{
+  width: 122rpx;
+  height: 184rpx;
+}
+.plant .cell .tree.bloom{
+  width:268rpx;
+  height: 290rpx;
+}
+.plant .cell .tree.fruit{
+  width: 296rpx;
+  height: 300rpx;
+}
 .plant .cell .top{
     top: 0;
     left: 0;
@@ -47,6 +68,21 @@
   top:-5rpx;
   font-size:10px;
 }
+.plant .cell .button{
+  width: 292rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  background: #01a744;
+  color: #fff;
+  text-align:center;
+  font-size: 14px;
+  border-radius: 35rpx;
+  position: absolute;
+  top: 320rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
 .plant .cell.img tt-icon{
   position: absolute;
   bottom: 130rpx;
@@ -59,6 +95,9 @@
   height: 100%;
 }
 
+.plant .cell.photos{
+  padding-right: 40rpx;
+}
 .plant .cell.photos text{
   float: right;
 }
@@ -74,6 +113,15 @@
   position: relative;
   top: 5px;
   margin-right: 5px;
+}
+.plant .cell tt-icon.arrow{
+  position: absolute;
+  right: -30rpx;
+  top: 5rpx;
+}
+.plant .cell tt-icon.arrow image{
+  width: 14rpx;
+  height: 26rpx;
 }
 
 
@@ -104,6 +152,15 @@
 .rank .item .water{
   float: right;
   line-height: 132rpx;
+}
+.rank .item .water tt-icon{
+  position: relative;
+  right: 40rpx;
+  top: 10rpx;
+}
+.rank .item .water tt-icon image{
+  width: 58rpx;
+  height: 52rpx;
 }
 
 

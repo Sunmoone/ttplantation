@@ -1,0 +1,5 @@
+<!--components/energyball.wxml-->
+<view class='energy-ball' style="top: {{top}}px;left: {{left}}px;">
+  <image src='/images/energy-ball.png'></image>
+  <text>{{num}}</text>
+</view>

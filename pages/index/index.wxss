@@ -4,7 +4,7 @@
 }
 .container image.world{
   width: 100%;
-  height: 340px;
+  height: 680rpx;
 }
 .container .site{
   position: absolute;
@@ -23,17 +23,17 @@
   border-radius: 50%;
 }
 .container .site.walnut{
-  top: 59rpx;
+  top: 120rpx;
   right: 60rpx;
 }
 .container .site.apple{
-  top: 98rpx;
+  top: 214rpx;
   left: 62rpx;
 }
 .container .site text{
   font-size: 14px;
   font-weight: 20;
-  color: #a1;
+  color: #222222;
 }
 .container .site button{
   background: rgb(1, 167, 68);

@@ -1,0 +1,17 @@
+
+.energy-ball{
+  position: absolute;
+  top: 200rpx;
+  left: 120rpx;
+  transition: top 2s ease, left 2s ease;
+}
+.energy-ball image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.energy-ball text{
+  position: absolute;
+  top: 15rpx;
+  left: 30rpx;
+  color: #008bb4;
+}

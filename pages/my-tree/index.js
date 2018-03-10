@@ -10,6 +10,12 @@ Page({
       province: '甘肃省',
       city: '成县',
       days: 17
+    },{
+      img: 'http://s15.sinaimg.cn/middle/611c7110hbe439d23d3de&690',
+      name: '成仙核桃',
+      province: '甘肃省',
+      city: '成县',
+      days: 17
     }]
   },
   onLoad: function () {

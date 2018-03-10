@@ -1,37 +1,59 @@
+.container{
+  padding: 0 40rpx;
+}
 .item{
+  width: 100%;
   margin-top: 10rpx;
-  padding: 20rpx;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.item:last-child{
+  border:none;
 }
 .item .left{
   float: left;
-  width: 190rpx;
-  height: 160rpx;
-  margin-right: 15rpx;
+  width: 240rpx;
+  height: 180rpx;
+  margin: 0 30rpx 30rpx 0;
   backgrond: #d3d3d3;
+  border-radius: 10rpx;
 }
 .item .right{
   float: left;
 }
 .item .right .name{
   font-weight: bold;
+  font-size: 16px;
 }
 .item .right .location{
-  margin-top: 5px;
+  margin-top: 10rpx;
+  font-size: 12px;
+  color: #999;
 }
 .item .right .days{
   margin-top: -10px;
-}
-.item .right .purchase{
-  margin-top: 10px;
   font-size: 12px;
+  color: #999;
 }
-.item .right .purchase button{
-  float: right;
-  width: auto;
-  height: 20px;
+.item .purchase{
+  margin-top: 46rpx;
+  font-size: 14px;
+  color: #222222;
+  clear: both;
+}
+.item .purchase text{
+  position: relative;
+  top: -15rpx;
+}
+.item .purchase button{
+  width: 190rpx;
+  height: 50rpx;
   text-align: center;
-  line-height: 20px;
-  margin-right: 5px;
+  line-height: 50rpx;
+  margin-left: 10rpx;
   font-size: 12px;
-  padding: 0 10px;
+  color: #fff;
+  border-radius: 30rpx;
+  background: linear-gradient(#f85959, #ff3e3e);
+  display: inline-block;
 }

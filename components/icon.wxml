@@ -1,2 +1,2 @@
 <!--components/imgicon.wxml-->
-<image class="tt-icon" src="../images/{{type}}.png" bindtap='bindtap'></image>
+<image class="tt-icon {{type}}" src="../images/{{type}}.png" bindtap='bindtap'></image>

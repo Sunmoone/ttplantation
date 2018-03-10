@@ -9,11 +9,11 @@
         </text>
         <text class="days"><tt-icon type='report'></tt-icon>{{days}}天
         </text>
-        <view class="purchase">
-          <text>我还想要：</text>
-          <button catchtap='onShopTap'>头条放心购</button>
-          <button catchtap='onTaobaoTap'>淘宝网</button>
-        </view>
+      </view>
+      <view class="purchase">
+        <text>我还想要：</text>
+        <button catchtap='onShopTap'>头条放心购</button>
+        <button catchtap='onTaobaoTap'>淘宝网</button>
       </view>
     </view>
 </view>

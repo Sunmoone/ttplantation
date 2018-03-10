@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    tree: 'sprout',
     hasWatering: false,
     location: '中环广场',
     plant: {

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class='container'>
-  <image src='./world.png'></image>
+  <image class='world' src='./world.png'></image>
   <view class='site walnut'>
     <image src='./walnut.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 二郎山</text>
@@ -16,6 +16,6 @@
     <text class='detail'>今日头条联合甘肃礼县、甘肃成县，退出"头条植物园"，用每天的阅读时间兑换能量，给植物浇水，历经发芽、生长、开花和结果，你就能收到山区寄来的真实果实！
     </text>
     <text class='tip'>👏 快来选择一颗属于你自己的果树！</text>
-    <text class='tip'>点击地点查看种植地详情，点击按钮种植果树</text>
+    <text class='tip'>⚠️ 点击地点查看种植地详情，点击按钮种植果树</text>
   </view>
 </view>
