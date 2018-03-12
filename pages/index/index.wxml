@@ -18,4 +18,8 @@
     <text class='tip'>👏 快来选择一颗属于你自己的果树！</text>
     <text class='tip'>⚠️ 点击地点查看种植地详情，点击按钮种植果树</text>
   </view>
+  <view class='tip-mask' wx:if="{{showTip}}">
+    <image class='btn' src='./tip.png'></image>
+    <image class='submit' src='./submit.png' bindtap='onConfirmTap'></image>
+  </view>
 </view>

@@ -30,7 +30,9 @@ Page({
       src: ''
     }, {
       src: ''
-    }]
+    }],
+    duration: 500,
+    balls:[]
   },
   onPhotoCellTap: function() {
     wx.navigateTo({
@@ -65,6 +67,40 @@ Page({
   onBtnTap: function(){
     wx.navigateTo({
       url: '../receive/index'
+    })
+  },
+  onMoreTreeTap: function(){
+    wx.navigateTo({
+      url: '../index/index',
+    })
+  },
+  onLoad: function(){
+    wx.login({
+      success: function(res){
+        wx.getUserInfo({
+          success: function(res){
+            console.log(res)
+          }
+        })
+      }
+    })
+    let time = this.data.duration
+    if(wx.getUserDuration){
+      time = wx.getUserDuration()
+    }
+    const balls = []
+    const count = Math.floor(time/50)
+    for(let i=1; i<=count; i++){
+      const top = Math.random(1, count)/count*320
+      const left = Math.random(1, count)/count*400
+      balls.push({
+        num: 50,
+        top: top,
+        left: left
+      })
+    }
+    this.setData({
+      balls: balls
     })
   }
 })

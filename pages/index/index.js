@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    showTip: true
   },
   onSiteTap: function(){
     wx.navigateTo({
@@ -13,6 +14,11 @@ Page({
   onPlantTap: function(e){
     wx.navigateTo({
       url: '../home/index',
+    })
+  },
+  onConfirmTap: function(){
+    this.setData({
+      showTip: false
     })
   }
 })

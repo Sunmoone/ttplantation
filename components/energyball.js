@@ -7,6 +7,14 @@ Component({
     num: {
       type: Number,
       value: 0
+    },
+    top: {
+      type: Number,
+      value: 0
+    },
+    left: {
+      type: Number,
+      value: 0
     }
   },
 
@@ -15,8 +23,8 @@ Component({
    */
   data: {
     type: 'minus',
-    top: Math.random(.5, 1)*100,
-    left: Math.random(.5, 1)*100
+    top: 0,
+    left: 0,
   },
 
   /**
@@ -26,9 +34,16 @@ Component({
     
   },
 
+  attached: function(){
+    this.setData({
+      top: this.data.top,
+      left: this.data.left
+    })
+  },
+
   ready: function(){
     setInterval(() => {
-      let {top, left, type} = this.data
+      let {type, top, left} = this.data
       const rand = Math.random()*10
       const range = 10
       if (type === 'minus') {
@@ -40,7 +55,6 @@ Component({
         left -= Math.random() * range
         type = 'minus'
       }
-
       this.setData({
         top: top,
         left: left,

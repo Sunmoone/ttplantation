@@ -11,9 +11,10 @@
           <text>{{plant.water}}ml/5000ml</text>
         </view>
       </view>
-      <button class='button'>再种一棵树</button>
+      <button class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <tt-icon type='envelope' catchtap='onEnvelopeTap'></tt-icon>
-      <energy-ball num="50"></energy-ball>
+      <energy-ball wx:key="{{index}}" wx:for="{{balls}}"
+       top="{{item.top}}" left="{{item.left}}" num="{{item.num}}"></energy-ball>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
       <tt-icon type='img'></tt-icon>种植历程
