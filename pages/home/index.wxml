@@ -14,7 +14,7 @@
       <button class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <tt-icon type='envelope' catchtap='onEnvelopeTap'></tt-icon>
       <energy-ball wx:key="{{index}}" wx:for="{{balls}}"
-       top="{{item.top}}" left="{{item.left}}" num="{{item.num}}"></energy-ball>
+       bottom="{{item.bottom}}" left="{{item.left}}" num="{{item.num}}"></energy-ball>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
       <tt-icon type='img'></tt-icon>种植历程

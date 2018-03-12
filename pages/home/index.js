@@ -90,12 +90,20 @@ Page({
     }
     const balls = []
     const count = Math.floor(time/50)
-    for(let i=1; i<=count; i++){
-      const top = Math.random(1, count)/count*320
-      const left = Math.random(1, count)/count*400
+
+    for(let i=0; i<7; i++){
+      const [circlex, circley] = [185, 225]
+      const r = Math.random(.5,1)*100 + 60
+      console.log(r)
+      const cta = Math.PI/6*i
+      const x = Math.floor(Math.sin(cta)*r)
+      const y = Math.floor(Math.cos(cta)*r)
+      const bottom = x + 50 + Math.random(-1, 1)*20
+      const left = 165 - y + Math.random(-1, 1) * 20
+      console.log(bottom, left)
       balls.push({
         num: 50,
-        top: top,
+        bottom: bottom,
         left: left
       })
     }

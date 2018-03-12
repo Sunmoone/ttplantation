@@ -1,65 +1,42 @@
 // components/energyball.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
     num: {
       type: Number,
       value: 0
     },
-    top: {
+    bottom: {
       type: Number,
       value: 0
     },
     left: {
       type: Number,
       value: 0
+    },
+    delay: {
+      type: Number,
+      value: 0
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     type: 'minus',
-    top: 0,
+    bottom: 0,
     left: 0,
+    show: true
   },
-
-  /**
-   * 组件的方法列表
-   */
-  methods: {
-    
-  },
-
   attached: function(){
+    const delay = Math.random()*Math.random()*6
     this.setData({
-      top: this.data.top,
-      left: this.data.left
+      bottom: this.data.bottom,
+      left: this.data.left,
+      delay: delay
     })
   },
-
-  ready: function(){
-    setInterval(() => {
-      let {type, top, left} = this.data
-      const rand = Math.random()*10
-      const range = 10
-      if (type === 'minus') {
-        top += Math.random() * range
-        left += Math.random() * range
-        type = 'plus'
-      }else{
-        top -= Math.random() * range
-        left -= Math.random() * range
-        type = 'minus'
-      }
+  methods: {
+    onTap: function () {
       this.setData({
-        top: top,
-        left: left,
-        type: type
+        show: false
       })
-    },2000)
+    }
   }
 })
