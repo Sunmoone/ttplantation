@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/home/index",
     "pages/photo/index",
     "pages/my-tree/index",

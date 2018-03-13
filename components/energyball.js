@@ -35,7 +35,8 @@ Component({
   methods: {
     onTap: function () {
       this.setData({
-        show: false
+        show: false,
+        delay: 0
       })
     }
   }

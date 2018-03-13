@@ -1,5 +1,5 @@
 <!--components/energyball.wxml-->
-<view class='energy-ball' style="bottom: {{bottom}}px;left: {{left}}px; animation-delay:{{delay}}s;" bindtap='onTap' wx:if='{{show}}'>
+<view class='energy-ball {{!show?"received":""}}' style="bottom: {{bottom}}px;left: {{left}}px; animation-delay:{{delay}}s;" bindtap='onTap'>
   <image src='/images/energy-ball.png'></image>
   <text>{{num}}</text>
 </view>
