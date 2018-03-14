@@ -15,7 +15,7 @@ Page({
     const pid = e.target.dataset.pid
     createPlant({
       pid: pid,
-      uid: app.globalData.userInfo.id
+      uid: app.globalData.userInfo.user_id
     }, function(res){
       wx.navigateTo({
         url: '/home/index?pid='+pid,
