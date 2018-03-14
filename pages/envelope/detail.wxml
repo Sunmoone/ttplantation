@@ -1,6 +1,6 @@
 <!--pages/envelope/detail.wxml-->
 <view class='container'>
-  <image src='./detail.jpeg'></image>
+  <image src='http://10.8.127.110/images/pages/envelope/detail.jpeg'></image>
   <view class='card'>
     <text class='title'>
       {{title}}

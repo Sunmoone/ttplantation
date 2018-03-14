@@ -55,6 +55,14 @@ Page({
       url: '../envelope/index',
     })
   }, 
+  onEnergyBallTap: function(e){
+    const balls = this.data.balls
+    balls[e.currentTarget.dataset.index].received = true
+    balls[e.currentTarget.dataset.index].delay = 0
+    this.setData({
+      balls: balls
+    })
+  },
   onWateringTap: function(){
     this.setData({
       hasWatering: true
@@ -100,11 +108,15 @@ Page({
       const y = Math.floor(Math.cos(cta)*r)
       const bottom = x + 50 + Math.random(-1, 1)*20
       const left = 165 - y + Math.random(-1, 1) * 20
+      const delay = Math.random() * Math.random() * 6
       console.log(bottom, left)
       balls.push({
         num: 50,
         bottom: bottom,
-        left: left
+        left: left,
+        delay: delay,
+        index: i,
+        received: false
       })
     }
     this.setData({

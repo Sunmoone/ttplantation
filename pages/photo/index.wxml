@@ -1,11 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <image class='banner' src='./banner.png'></image>
+  <image class='banner' src='http://10.8.127.110/images/pages/photo/banner.png'></image>
   <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
     <view class='dot'></view>
     <text>{{item.date}}</text>
     <view>
-      <image src="{{item.src}}"></image>
+      <image src="http://10.8.127.110/images/pages/photo/{{item.src}}"></image>
     </view>
   </view>
   <text class='no-more'>暂无更多历程</text>

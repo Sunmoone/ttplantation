@@ -1,15 +1,15 @@
 <!--index.wxml-->
 <view class='container'>
-  <image class='world' src='./world.png'></image>
+  <image class='world' src='http://10.8.127.110/images/pages/index/world.png'></image>
   <view class='site walnut'>
-    <image src='./walnut.jpg' catchtap='onSiteTap'></image>
+    <image src='http://10.8.127.110/images/pages/index/walnut.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 二郎山</text>
-    <button bindtap='onPlantTap'>我要种核桃</button>
+    <button data-pid='1' bindtap='onPlantTap'>我要种核桃</button>
   </view>
   <view class='site apple'>
-    <image src='./apple.jpg' catchtap='onSiteTap'></image>
+    <image src='http://10.8.127.110/images/pages/index/apple.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 川坝河谷</text>
-    <button bindtap='onPlantTap'>我要种苹果</button>
+    <button data-pid='2' bindtap='onPlantTap'>我要种苹果</button>
   </view>
   <view class='intro'>
     <text class='title'>在遥远的山区拥有<br/>一棵属于自己的果树？</text>
@@ -19,7 +19,7 @@
     <text class='tip'>⚠️ 点击地点查看种植地详情，点击按钮种植果树</text>
   </view>
   <view class='tip-mask' wx:if="{{showTip}}">
-    <image class='btn' src='./tip.png'></image>
-    <image class='submit' src='./submit.png' bindtap='onConfirmTap'></image>
+    <image class='btn' src='http://10.8.127.110/images/pages/index/tip.png'></image>
+    <image class='submit' src='http://10.8.127.110/images/pages/index/submit.png' bindtap='onConfirmTap'></image>
   </view>
 </view>

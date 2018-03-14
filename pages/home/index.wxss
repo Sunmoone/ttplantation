@@ -18,7 +18,7 @@
   width: 100%;
   height: 353px;
 }
-.plant .cell .tree{
+.plant .cell .tree-img{
   width: 90rpx;
   height: 82rpx;
   position: absolute;
@@ -27,15 +27,15 @@
   right: 0;
   margin: 0 auto; 
 }
-.plant .cell .tree.leaf{
+.plant .cell .tree-img.leaf{
   width: 122rpx;
   height: 184rpx;
 }
-.plant .cell .tree.bloom{
+.plant .cell .tree-img.bloom{
   width:268rpx;
   height: 290rpx;
 }
-.plant .cell .tree.fruit{
+.plant .cell .tree-img.fruit{
   width: 296rpx;
   height: 300rpx;
 }
@@ -83,16 +83,12 @@
   right: 0;
   margin: 0 auto;
 }
-.plant .cell.img tt-icon{
+.plant .cell.img .tt-icon.envelope{
   position: absolute;
   bottom: 130rpx;
   left: 100rpx;
   width: 66rpx;
   height: 50rpx;
-}
-.plant .cell.img tt-icon image{
-  width: 100%;
-  height: 100%;
 }
 
 .plant .cell.photos{
@@ -101,7 +97,7 @@
 .plant .cell.photos text{
   float: right;
 }
-.plant .cell.photos tt-icon{
+.plant .cell.photos .tt-icon{
   position: relative;
   top: 5px;
   margin-right: 5px;
@@ -109,17 +105,15 @@
 .plant .cell.my-tree text{
   float: right;
 }
-.plant .cell.my-tree tt-icon{
+.plant .cell.my-tree .tt-icon{
   position: relative;
   top: 5px;
   margin-right: 5px;
 }
-.plant .cell tt-icon.arrow{
+.plant .cell .tt-icon.arrow{
   position: absolute;
-  right: -30rpx;
-  top: 5rpx;
-}
-.plant .cell tt-icon.arrow image{
+  right: -5rpx;
+  top: 30rpx;
   width: 14rpx;
   height: 26rpx;
 }
@@ -141,7 +135,7 @@
   padding-right: 20px;
   border-bottom: 1px solid rgb(241, 241, 241);
 }
-.rank .item tt-avatar image{
+.rank .item .tt-avatar{
   width:76rpx;
   height:76rpx;
   border-radius:8rpx;
@@ -153,12 +147,10 @@
   float: right;
   line-height: 132rpx;
 }
-.rank .item .water tt-icon{
+.rank .item .water .tt-icon{
   position: relative;
   right: 40rpx;
   top: 10rpx;
-}
-.rank .item .water tt-icon image{
   width: 58rpx;
   height: 52rpx;
 }

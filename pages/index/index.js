@@ -1,6 +1,5 @@
 //index.js
-//获取应用实例
-const app = getApp()
+import {createPlant} from '../../services/RecordService.js'
 
 Page({
   data: {
@@ -12,8 +11,13 @@ Page({
     })
   },
   onPlantTap: function(e){
-    wx.navigateTo({
-      url: '../home/index',
+    const pid = e.target.dataset.pid
+    createPlant({
+      pid: pid
+    }, function(res){
+      wx.navigateTo({
+        url: '/home/index?pid='+pid,
+      })
     })
   },
   onConfirmTap: function(){

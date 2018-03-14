@@ -1,2 +1,4 @@
 <!--components/imgicon.wxml-->
-<image class="tt-icon {{type}}" src="../images/{{type}}.png" bindtap='bindtap'></image>
+<template name='icon'>
+  <image class="tt-icon {{type}}"   src="http://10.8.127.110/images/components/{{type}}.png"  bindtap="{{onTap}}"></image>
+</template>

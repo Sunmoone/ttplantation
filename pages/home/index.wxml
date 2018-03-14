@@ -1,29 +1,32 @@
 <!--index.wxml-->
+<import src='/components/icon.wxml'/>
+<import src='/components/avatar.wxml'/>
+<import src='/components/energyball.wxml'/>
 <view class="container">
   <view class="plant">
     <view class='cell img'>
-      <image class='bg' src="./bg.png" bindtap="onPlantTap"></image>
-      <image class='tree {{tree}}' src='/images/{{tree}}.png'></image>
+      <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png" bindtap="onPlantTap"></image>
+      <image class='tree-img {{tree}}' src='http://10.8.127.110/images/pages/home/{{tree}}.png'></image>
       <view class='top'>
         <text class='name'>{{plant.name}}</text>
         <view class='energy'>
-          <image src='./group10.png'></image>
+          <image src='http://10.8.127.110/images/pages/home/group10.png'></image>
           <text>{{plant.water}}ml/5000ml</text>
         </view>
       </view>
       <button class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
-      <tt-icon type='envelope' catchtap='onEnvelopeTap'></tt-icon>
-      <energy-ball wx:key="{{index}}" wx:for="{{balls}}"
-       bottom="{{item.bottom}}" left="{{item.left}}" num="{{item.num}}"></energy-ball>
+      <template is="icon" data="{{type:'envelope', onTap:'onEnvelopeTap'}}"/>
+      <template is='energy-ball' wx:key="{{index}}" wx:for="{{balls}}"
+      data="{{index:item.index,bottom:item.bottom,left:item.left,num:item.num,delay:item.delay,received:item.received,onTap:'onEnergyBallTap'}}"/>
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
-      <tt-icon type='img'></tt-icon>种植历程
+      <template is='icon' data="{{type: 'img'}}"/>种植历程
       <text>{{photos.length}}</text>
-      <tt-icon class='arrow' type='arrow'></tt-icon>
+      <template is='icon' data="{{type: 'arrow'}}"/>
     </view>
     <view class='cell my-tree' bindtap="onMyTreeCellTap">
-      <tt-icon type='tree'></tt-icon>我的果树
-      <tt-icon type='arrow' class='arrow'></tt-icon>
+      <template is='icon' data="{{type: 'tree'}}"/>我的果树
+      <template is='icon' data="{{type: 'arrow'}}"/>
     </view>
   </view>
   <view class="rank">
@@ -32,10 +35,10 @@
     </view>
     <view class='item' wx:key="{{index}}" wx:for="{{rankList}}">
       {{index+1}} 
-      <tt-avatar src="http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg"></tt-avatar> 
+      <template is='avatar' data="{{src:'http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg'}}"/> 
       {{item.name}} 
       <view class='water'>
-        <tt-icon type='watering'></tt-icon>{{item.water}}ml
+        <template is='icon' data="{{type:'watering'}}"/>{{item.water}}ml
       </view>
     </view>
   </view>
@@ -45,5 +48,5 @@
     <text class='tip'>每邀请一个好友可获得10ml能量</text>
     <input placeholder='请输入好友邀请码' bindinput='onNameInput'></input>
   </view>
-  <image class='bottom-img' src='./bottom-img.png'></image>
+  <image class='bottom-img' src='http://10.8.127.110/images/pages/home/bottom-img.png'></image>
 </view>

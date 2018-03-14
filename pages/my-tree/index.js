@@ -25,7 +25,7 @@ Page({
   },
   onItemTap: function(){
     wx.navigateTo({
-      url: '../my-tree/detail',
+      url: '/pages/my-tree/detail',
     })
   },
   onShopTap: function(){
