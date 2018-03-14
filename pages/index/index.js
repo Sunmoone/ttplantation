@@ -1,6 +1,7 @@
 //index.js
-import {createPlant} from '../../services/RecordService.js'
+import {createPlant} from '../../services/UserService.js'
 
+const app = getApp()
 Page({
   data: {
     showTip: true
@@ -13,7 +14,8 @@ Page({
   onPlantTap: function(e){
     const pid = e.target.dataset.pid
     createPlant({
-      pid: pid
+      pid: pid,
+      uid: app.globalData.userInfo.id
     }, function(res){
       wx.navigateTo({
         url: '/home/index?pid='+pid,
