@@ -6,7 +6,7 @@
   <view class="plant">
     <view class='cell img'>
       <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png" bindtap="onPlantTap"></image>
-      <image class='tree-img {{tree}}' src='http://10.8.127.110/images/pages/home/{{tree}}.png'></image>
+      <image class='tree-img {{treeImg}}' src='http://10.8.127.110/images/pages/home/{{treeImg}}.png'></image>
       <view class='top'>
         <text class='name'>{{plant.name}}</text>
         <view class='energy'>

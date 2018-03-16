@@ -3,7 +3,7 @@ export function request(url,method,data,success){
     title: '加载中',
   })
   wx.request({
-    url: `http://10.8.127.110/${url}`,
+    url: `http://10.2.195.63:8000/api/v1/${url}/`,
     method: method||'GET',
     data: data,
     header: {
@@ -17,7 +17,7 @@ export function request(url,method,data,success){
         })
         return false
       }
-      success.call(this, res)
+      success.call(this, res.data)
     },
     fail: function(res){
       wx.showToast({

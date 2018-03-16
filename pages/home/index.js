@@ -1,12 +1,13 @@
-//index.js
-//获取应用实例
+import {plantDetail} from '../../services/PlantService.js'
+import {recordDetail} from '../../services/RecordService.js'
+
 const app = getApp()
 
 Page({
   data: {
-    tree: 'sprout',
-    hasWatering: false,
-    location: '中环广场',
+    record: {
+      step: 1
+    },
     plant: {
       name: '甘肃川坝河谷.苹果园',
       water: 500
@@ -15,24 +16,36 @@ Page({
       name: 'miaomiao',
       avatar: '',
       water: 8000
-    }, {
-      name: 'haaaaa',
-      avatar: '',
-      water: 7500
-    }, {
-      name: 'kkkkkk',
-      avatar: '',
-      water: 6700
     }],
     photos: [{
-      src: ''
-    }, {
-      src: ''
-    }, {
       src: ''
     }],
     duration: 500,
     balls:[]
+  },
+  onLoad: function (options) {
+    //get plant detail
+    recordDetail({rid: options.rid}, res => {
+      this.setData({
+        record: res.data
+      })
+      plantDetail({pid: res.data.pid}, res => {
+        this.setData({
+          plant: res.data
+        })
+      })
+    })
+
+    //get duration, unit:s
+    if (wx.getUseDuration) {
+      wx.getUseDuration({
+        success: function (res) {
+          this.renderBalls(res.data.duration)
+        }
+      })
+    } else {
+      this.renderBalls(50 * 60)
+    }
   },
   onPhotoCellTap: function() {
     wx.navigateTo({
@@ -44,7 +57,6 @@ Page({
       url: '../my-tree/index',
     })
   },
-  onLoad: function () {},
   onPlantTap: function(){
     wx.navigateTo({
       url: '../my-tree/detail',
@@ -82,34 +94,17 @@ Page({
       url: '../index/index',
     })
   },
-  onLoad: function(){
-    wx.login({
-      success: function(res){
-        wx.getUserInfo({
-          success: function(res){
-            console.log(res)
-          }
-        })
-      }
-    })
-    let time = this.data.duration
-    if(wx.getUserDuration){
-      time = wx.getUserDuration()
-    }
+  renderBalls: function(time){
     const balls = []
-    const count = Math.floor(time/50)
-
-    for(let i=0; i<7; i++){
-      const [circlex, circley] = [185, 225]
-      const r = Math.random(.5,1)*100 + 60
-      console.log(r)
-      const cta = Math.PI/6*i
-      const x = Math.floor(Math.sin(cta)*r)
-      const y = Math.floor(Math.cos(cta)*r)
-      const bottom = x + 50 + Math.random(-1, 1)*20
+    const count = Math.floor(time / 50)
+    for (let i = 0; i < 7; i++) {
+      const r = Math.random(.5, 1) * 100 + 60
+      const cta = Math.PI / 6 * i
+      const x = Math.floor(Math.sin(cta) * r)
+      const y = Math.floor(Math.cos(cta) * r)
+      const bottom = x + 50 + Math.random(-1, 1) * 20
       const left = 165 - y + Math.random(-1, 1) * 20
       const delay = Math.random() * Math.random() * 6
-      console.log(bottom, left)
       balls.push({
         num: 50,
         bottom: bottom,

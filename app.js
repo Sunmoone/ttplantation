@@ -1,14 +1,14 @@
 //app.js
+import {getOrSave} from './services/UserService.js'
 App({
   onLaunch: function () {
     const that = this
     wx.login({
       success: function(res){
-        console.log(res)
         wx.getUserInfo({
           success: function (res) {
-            console.log(JSON.stringify(res.data.user_info))
-            that.globalData.userInfo = res.data.user_info
+            const user_info = res.data.user_info
+            that.globalData.userInfo = user_info
           }
         })
       },
