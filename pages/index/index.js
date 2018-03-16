@@ -20,7 +20,7 @@ Page({
     getOrSave(user_info, function (res) {
       const rid = res.data.planting_rid
       if (rid !== -1) {
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../home/index?rid=' + rid,
         })
       }
