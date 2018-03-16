@@ -11,14 +11,17 @@ Page({
       url: '../my-tree/detail',
     })
   },
-  onPlantTap: function(e){
+  onPlantTap: function (e) {
+    wx.navigateTo({
+      url: '/pages/home/index',
+    })
     const pid = e.target.dataset.pid
     createPlant({
       pid: pid,
       uid: app.globalData.userInfo.user_id
     }, function(res){
       wx.navigateTo({
-        url: '/home/index?pid='+pid,
+        url: '/pages/home/index?pid='+pid,
       })
     })
   },

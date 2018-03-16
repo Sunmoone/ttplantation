@@ -5,10 +5,8 @@
       <view class="right">
         <text class="name">{{item.name}}
         </text>
-        <text class="location"><tt-icon type='report'></tt-icon>{{item.province}}.{{item.city}}
-        </text>
-        <text class="days"><tt-icon type='report'></tt-icon>{{days}}天
-        </text>
+        <text class="location">{{item.province}}.{{item.city}}</text>
+        <text class="days">{{days}}天</text>
       </view>
       <view class="purchase">
         <text>我还想要：</text>

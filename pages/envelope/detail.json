@@ -1,6 +1,3 @@
 {
-  "navigationBarTitleText": "种植历程",
-  "usingComponents": {
-    "tt-icon": "/components/icon"
-  }
+  "navigationBarTitleText": "种植历程"
 }
