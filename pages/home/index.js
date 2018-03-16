@@ -5,6 +5,7 @@ const app = getApp()
 
 Page({
   data: {
+    treeImg: 'sprout',
     record: {
       step: 1
     },
@@ -26,8 +27,16 @@ Page({
   onLoad: function (options) {
     //get plant detail
     recordDetail({rid: options.rid}, res => {
+      const treeImg = {
+        1: 'sprout',
+        2: 'leaf',
+        3: 'trunk',
+        4: 'bloom',
+        5: 'fruit'
+      }
       this.setData({
-        record: res.data
+        record: res.data,
+        treeImg: treeImg[5]
       })
       plantDetail({pid: res.data.pid}, res => {
         this.setData({

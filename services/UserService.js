@@ -11,3 +11,7 @@ export function getOrSave(data, success){
 export function createdPlantList(data, success){
   request(`records/${data.uid}`, 'GET', data, success)
 }
+
+export function listMsg(data, success){
+  request(`msgs/${data.uid}`, 'GET', data, success)
+}

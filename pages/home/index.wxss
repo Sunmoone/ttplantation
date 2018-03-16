@@ -32,6 +32,10 @@
   height: 184rpx;
 }
 .plant .cell .tree-img.bloom{
+  width: 288rpx;
+  height: 290rpx;
+}
+.plant .cell .tree-img.trunk{
   width:268rpx;
   height: 290rpx;
 }

@@ -41,3 +41,21 @@
   text-align: center;
 }
 
+
+.card{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 560rpx;
+  height: auto;
+}
+.card .card-close{
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  width: 10rpx;
+}
+
