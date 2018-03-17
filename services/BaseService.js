@@ -1,7 +1,9 @@
 export function request(url,method,data,success){
-  wx.showLoading({
-    title: '加载中',
-  })
+  if(data.showLoading!==false){
+    wx.showLoading({
+      title: '加载中',
+    })
+  }
   wx.request({
     url: `http://10.2.195.63:8000/api/v1/${url}/`,
     method: method||'GET',

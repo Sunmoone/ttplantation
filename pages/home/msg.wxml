@@ -2,6 +2,6 @@
 <view class='container'>
   <view class='item' wx:for='{{msgs}}' wx:key='{{index}}'>
     <view class='content'>{{item.content}}</view>
-    <view class='date'>{{formatTime(item.time)}}</view>
+    <view class='date'>{{item.time}}</view>
   </view>
 </view>

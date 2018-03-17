@@ -8,7 +8,9 @@ Page({
     onLoad: function () {
       setTimeout(function () {
         const user = app.globalData.userInfo
+        user.showLoading = false
         getOrSave(user, res => {
+          app.globalData.userInfo = res.data
           const rid = res.data.planting_rid
           wx.redirectTo({
             url: rid === -1 ? '../index/index' : ('../home/index?rid=' + rid),

@@ -35,3 +35,7 @@ export function getAddress(data, success) {
 export function receiveEnergy(data, success) {
   request(`record/${data.rid}`, 'PUT', data, success)
 }
+
+export function listWateringMsg(data, success) {
+  request(`user/${data.rid}/watering`, 'GET', data, success)
+}

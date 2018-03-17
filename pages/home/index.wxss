@@ -183,10 +183,17 @@
   width: 58rpx;
   height: 52rpx;
 }
+.rank .empty{
+  width:100%;
+  margin:74rpx 0;
+  color:rgb(153, 153, 153);
+  font-size:12px;
+  text-align:center;
+}
 
 
 .invite{
-  margin: 60rpx auto 0 auto;
+  margin: 0 auto;
 }
 .invite text{
   display: block;
