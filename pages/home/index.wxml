@@ -12,7 +12,7 @@
         <view class='energy'>
           <view class='num' style='width:{{user.total_energy/5000}}%'></view>
           <image src='http://10.8.127.110/images/pages/home/group10.png'></image>
-          <text>{{user.total_energy}}ml/5000ml</text>
+          <text>{{user.total_energy}}ml/8600ml</text>
         </view>
       </view>
       <button class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
