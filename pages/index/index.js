@@ -15,12 +15,6 @@ Page({
       this.setData({showTip: true})
       wx.setStorageSync('hasTip', 'true')
     }
-
-    //get planting_rid
-    const userInfo = app.globalData.userInfo
-    getOrSave(userInfo, function (res) {
-      app.globalData.userInfo = res.data
-    })
   },
   onSiteTap: function(e){
     const pid = e.target.dataset.pid

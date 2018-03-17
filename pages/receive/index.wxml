@@ -4,11 +4,11 @@
   <view class='address_form'>
     <view class='form-item'>
       <text class='form-label'>收货人</text>
-      <input class='form-input' placeholder='请输入收货人姓名' bindinput='onNameInput'></input>
+      <input class='form-input' placeholder='请输入收货人姓名' value="{{name}}" bindinput='onNameInput'></input>
     </view>
     <view class='form-item'>
       <text class='form-label'>联系电话</text>
-      <input class='form-input' type='number' placeholder='请输入联系电话' bindinput='onMobileInput'></input>
+      <input class='form-input' type='number' placeholder='请输入联系电话' value ="{{mobile}}" bindinput='onMobileInput'></input>
     </view>
     <view class='form-item'>
       <text class='form-label'>所在地区</text>
@@ -20,7 +20,7 @@
     </view>
     <view class='form-item-address'>
       <text class='form-label'>详细地址</text>
-      <textarea placeholder='请输入详细地址信息' bindinput='onAddressInput'></textarea>
+      <textarea placeholder='请输入详细地址信息' bindinput='onAddressInput' value="{{address}}"></textarea>
     </view>
   </view>
   <view class='address_button'>

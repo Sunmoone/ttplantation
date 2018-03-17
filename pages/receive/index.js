@@ -1,4 +1,4 @@
-import { postAddress } from '../../services/UserService.js'
+import { postAddress, getAddress } from '../../services/UserService.js'
 
 //获取应用实例
 const app = getApp();
@@ -16,8 +16,19 @@ Page({
     treeName: ''
   },
   onLoad: function(options) {
+    getAddress({uid: app.globalData.userInfo.user_id || app.globalData.userInfo.uid}, (res) => {
+      if (res.data) {
+        console.log(res.data);
+        this.setData({
+          name: res.data.name,
+          mobile: res.data.mobile,
+          address: res.data.address,
+          region: res.data.region.split(',')
+        });
+      }
+    });
     this.setData({
-      treeName: decodeURIComponent(options.name)
+      treeName: options.name ? decodeURIComponent(options.name) : '果实'
     });
   },
   onSubmit: function(){
@@ -34,7 +45,7 @@ Page({
       mobile: mobile,
       region: region.toString(),
       address: address,
-      uid: app.globalData.userInfo.user_id
+      uid: app.globalData.userInfo.user_id || app.globalData.userInfo.uid
     }
     console.log(postData);
     postAddress(postData, (res) => {
