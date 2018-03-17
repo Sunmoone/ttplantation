@@ -18,7 +18,5 @@ Page({
           })
         })
       }, 1500)
-      this.myAudio = wx.createAudioContext('myAudio');
-      this.myAudio.play();
     }
 })
