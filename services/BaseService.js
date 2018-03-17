@@ -10,10 +10,10 @@ export function request(url,method,data,success){
       'content-type': 'application/json' // 默认值
     },
     success: function (res) {
-      if(res.statusCode!==200){
+      if(res.data.meta.statusCode!==0){
         wx.showToast({
           icon: 'none',
-          title: res.data.message||'请求失败，请稍候重试',
+          title: res.data.meta.msg||'请求失败，请稍候重试',
         })
         return false
       }

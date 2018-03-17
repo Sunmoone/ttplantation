@@ -8,7 +8,8 @@
     "pages/envelope/index",
     "pages/receive/index",
     "pages/envelope/detail",
-    "pages/my-tree/taobao"
+    "pages/my-tree/taobao",
+    "pages/dev/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

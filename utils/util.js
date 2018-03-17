@@ -1,4 +1,7 @@
-const formatTime = date => {
+//time单位为s
+const formatTime = time => {
+  const date = new Date()
+  date.setTime(time*1000)
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -6,7 +9,7 @@ const formatTime = date => {
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  return [year, month, day].map(formatNumber).join('.')
 }
 
 const formatNumber = n => {

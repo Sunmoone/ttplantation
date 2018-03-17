@@ -7,8 +7,9 @@ App({
       success: function(res){
         wx.getUserInfo({
           success: function (res) {
-            const user_info = res.data.user_info
-            that.globalData.userInfo = user_info
+            console.log(res)
+            const userInfo = res.data.userInfo
+            that.globalData.userInfo = userInfo
           }
         })
       },
@@ -16,10 +17,14 @@ App({
         console.log(res)
       }
     })
+    // this.globalData.userInfo = {
+    //   user_id: 52919861934,
+    //   total_energy: 100
+    // }
   },
   globalData: {
     userInfo: {
-      id: 111,
+      id: 222,
       name: 'junlongtao',
       avatar: 'xxxxx',
     }

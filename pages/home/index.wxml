@@ -6,12 +6,13 @@
   <view class="plant">
     <view class='cell img'>
       <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png" bindtap="onPlantTap"></image>
-      <image class='tree-img {{treeImg}}' src='http://10.8.127.110/images/pages/home/{{treeImg}}.png'></image>
+      <image wx:if='{{treeImg}}' class='tree-img {{treeImg}}' src='http://10.8.127.110/images/pages/home/{{treeImg}}.png'></image>
       <view class='top'>
         <text class='name'>{{plant.name}}</text>
         <view class='energy'>
+          <view class='num' style='width:{{user.total_energy/5000}}%'></view>
           <image src='http://10.8.127.110/images/pages/home/group10.png'></image>
-          <text>{{plant.water}}ml/5000ml</text>
+          <text>{{user.total_energy}}ml/5000ml</text>
         </view>
       </view>
       <button class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
@@ -33,20 +34,20 @@
     <view class='title'>
       好友排名
     </view>
-    <view class='item' wx:key="{{index}}" wx:for="{{rankList}}">
+    <view class='item' wx:key="{{index}}" wx:for="{{friends}}">
       {{index+1}} 
-      <template is='avatar' data="{{src:'http://219.129.73.200:81/my_uppic/touxiang/big/touxiang%20(3).jpg'}}"/> 
+      <template is='avatar' data="{{src: item.avatar_url}}"/> 
       {{item.name}} 
       <view class='water'>
-        <template is='icon' data="{{type:'watering'}}"/>{{item.water}}ml
+        <template is='icon' data="{{type:'watering'}}"/>{{item.total_energy}}ml
       </view>
     </view>
   </view>
   <view class="invite">
-    <text class='code'>64712932</text>
+    <text class='code'>{{user.uid}}</text>
     <text class='my-code'>我的邀请码</text>
-    <text class='tip'>每邀请一个好友可获得10ml能量</text>
-    <input placeholder='请输入好友邀请码' bindinput='onNameInput'></input>
+    <text class='tip'>为好友浇水有奖励可获得3ml能量</text>
+    <input placeholder='请输入好友邀请码' bindconfirm='onInviteConfirm'></input>
   </view>
   <image class='bottom-img' src='http://10.8.127.110/images/pages/home/bottom-img.png'></image>
 </view>

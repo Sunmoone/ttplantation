@@ -72,6 +72,16 @@
   top:-5rpx;
   font-size:10px;
 }
+.plant .cell .top .energy .num{
+  position:absolute;
+top:20rpx;
+left:3rpx;
+width:50%;
+height:28rpx;
+background:linear-gradient(#b8f53c, #3ffa5b);
+border-radius:20rpx 0 0 20rpx;
+
+}
 .plant .cell .button{
   width: 292rpx;
   height: 62rpx;

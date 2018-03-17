@@ -15,3 +15,11 @@ export function createdPlantList(data, success){
 export function listMsg(data, success){
   request(`msgs/${data.uid}`, 'GET', data, success)
 }
+
+export function listFriend(data, success) {
+  request(`rank/${data.uid}`, 'GET', data, success)
+}
+
+export function inviteUser(data, success) {
+  request(`user/${data.uid}/invite/${data.invite_uid}`, 'POST', data, success)
+}

@@ -15,27 +15,24 @@ Page({
       this.setData({showTip: true})
       wx.setStorageSync('hasTip', 'true')
     }
+
     //get planting_rid
-    const user_info = app.globalData.userInfo
-    getOrSave(user_info, function (res) {
-      const rid = res.data.planting_rid
-      if (rid !== -1) {
-        wx.redirectTo({
-          url: '../home/index?rid=' + rid,
-        })
-      }
+    const userInfo = app.globalData.userInfo
+    getOrSave(userInfo, function (res) {
+      app.globalData.userInfo = res.data
     })
   },
-  onSiteTap: function(){
+  onSiteTap: function(e){
+    const pid = e.target.dataset.id
     wx.navigateTo({
-      url: '../my-tree/detail',
+      url: '../my-tree/detail?pid='+pid,
     })
   },
   onPlantTap: function (e) {
     const pid = e.target.dataset.pid
     createPlant({
       pid: pid,
-      uid: app.globalData.userInfo.user_id
+      uid: app.globalData.userInfo.uid
     }, function(res){
       wx.navigateTo({
         url: '../home/index?rid='+res.data.rid,

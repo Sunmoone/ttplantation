@@ -1,29 +1,10 @@
 import {plantDetail} from '../../services/PlantService.js'
 import {recordDetail} from '../../services/RecordService.js'
+import {listMsg, listFriend, inviteUser} from '../../services/UserService.js'
 
 const app = getApp()
-
 Page({
-  data: {
-    treeImg: 'sprout',
-    record: {
-      step: 1
-    },
-    plant: {
-      name: '甘肃川坝河谷.苹果园',
-      water: 500
-    },
-    rankList:[{
-      name: 'miaomiao',
-      avatar: '',
-      water: 8000
-    }],
-    photos: [{
-      src: ''
-    }],
-    duration: 500,
-    balls:[]
-  },
+  data: {},
   onLoad: function (options) {
     //get plant detail
     recordDetail({rid: options.rid}, res => {
@@ -36,7 +17,7 @@ Page({
       }
       this.setData({
         record: res.data,
-        treeImg: treeImg[5]
+        treeImg: treeImg[res.data.step]
       })
       plantDetail({pid: res.data.pid}, res => {
         this.setData({
@@ -55,6 +36,24 @@ Page({
     } else {
       this.renderBalls(50 * 60)
     }
+
+    //get photos
+    const user = app.globalData.userInfo
+    listMsg({uid: user.uid}, res => {
+      this.setData({photos: res.data})
+    })
+
+    //get ranks
+    listFriend({
+      uid: user.uid,
+      page: 1,
+      size: 10
+    }, res => {
+      this.setData({friends: res.data})
+    })
+
+    //get user
+    this.setData({user: user})
   },
   onPhotoCellTap: function() {
     wx.navigateTo({
@@ -101,6 +100,15 @@ Page({
   onMoreTreeTap: function(){
     wx.navigateTo({
       url: '../index/index',
+    })
+  },
+  onInviteConfirm: function(e){
+    const value = e.detail.value
+    const user = app.globalData.userInfo
+    inviteUser({uid: user.uid, invite_uid: value}, res => {
+      wx.showToast({
+        title: '添加好友成功',
+      })
     })
   },
   renderBalls: function(time){

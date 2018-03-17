@@ -1,13 +1,11 @@
 // pages/envelope/index.js
 import {listMsg} from '../../services/UserService'
+import {formatTime} from '../../utils/util.js'
+
 const app = getApp()
 Page({
   data: {
-    msgs: [{
-      content: '请查看苹果长势',
-      from: '我的农场',
-      date: '2018.06.23'
-    }]
+    msgs: []
   },
   onLoad: function(){
     listMsg({
@@ -15,8 +13,12 @@ Page({
       page: 1,
       size: 10  
     }, res => {
+      const msgs = res.data.map(item => {
+        item.time = formatTime(item.time)
+        return item
+      })
       this.setData({
-        msgs: res.data||[]
+        msgs: msgs
       })
     })
   },
