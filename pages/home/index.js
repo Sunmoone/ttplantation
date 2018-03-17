@@ -30,11 +30,13 @@ Page({
     if (wx.getUseDuration) {
       wx.getUseDuration({
         success: function (res) {
-          this.renderBalls(res.data.duration)
+          const minutes = res.data.duration/60
+          const record = this.data.record
+          this.renderBalls(minutes - record.harvest_energy)
         }
       })
     } else {
-      this.renderBalls(50 * 60)
+      this.renderBalls(76)
     }
 
     //get photos
@@ -43,17 +45,21 @@ Page({
       this.setData({photos: res.data})
     })
 
-    //get ranks
+    //list friend
+    this.listFriend()
+
+    //get user
+    this.setData({user: user})
+  },
+  listFriend: function(){
+    const user = app.globalData.userInfo
     listFriend({
       uid: user.uid,
       page: 1,
       size: 10
     }, res => {
-      this.setData({friends: res.data})
+      this.setData({ friends: res.data })
     })
-
-    //get user
-    this.setData({user: user})
   },
   onPhotoCellTap: function() {
     wx.navigateTo({
@@ -65,6 +71,11 @@ Page({
       url: '../my-tree/index',
     })
   },
+  onMyMsgCellTap: function(){
+    wx.navigateTo({
+      url: '../home/msg',
+    })
+  },
   onPlantTap: function(){
     wx.navigateTo({
       url: '../my-tree/detail?pid='+this.data.record.pid,
@@ -74,24 +85,30 @@ Page({
     wx.navigateTo({
       url: '../envelope/index',
     })
-  }, 
+  },
   onEnergyBallTap: function (e) {
     const balls = this.data.balls
-    const ball = balls[e.currentTarget.dataset.index]
+    const index = e.currentTarget.dataset.index
+    const ball = balls[index]
+    if(ball.received){
+      return false
+    }
     const rid = this.data.record.rid
     receiveEnergy({ rid: rid, num: ball.num, type: ball.type }, res => {
       const balls = this.data.balls
       balls[index].received = true
+      balls[index].delay = 0
       this.setData({ balls: balls, record: res.data })
     })
   },
-  onWateringTap: function(){
-    this.setData({
-      hasWatering: true
-    })
-    wx.showToast({
-      title: '为好友浇水成功',
-      icon: 'none'
+  onWateringTap: function(e){
+    const index = e.currentTarget.dataset.index
+    const friends = this.data.friends
+    const item = friends[index]
+    const user = app.globalData.userInfo
+    watering({uid: user.uid, watering_uid: item.uid}, res=>{
+      friends[index].hasWatering = true
+      this.setData({friends: friends})
     })
   },
   onBtnTap: function(){
@@ -109,24 +126,27 @@ Page({
     const user = app.globalData.userInfo
     inviteUser({uid: user.uid, invite_uid: value}, res => {
       wx.showToast({
-        title: '添加好友成功',
+        title: '好友添加成功',
       })
+      this.listFriend()
     })
   },
+  //time unit: minute
   renderBalls: function(time){
     const balls = []
-    const count = Math.floor(time / 50)
-    for (let i = 0; i < 7; i++) {
+    const num = 10
+    const count = Math.floor(time / num)
+    for (let i = 0; i < count; i++) {
       const r = Math.random(.5, 1) * 100 + 60
       const cta = Math.PI / 6 * i
       const x = Math.floor(Math.sin(cta) * r)
       const y = Math.floor(Math.cos(cta) * r)
-      const bottom = x + 50 + Math.random(-1, 1) * 20
-      const left = 165 - y + Math.random(-1, 1) * 20
+      const bottom = x + 80 + Math.random(-1, 1) * 40
+      const left = 165 - y + Math.random(-1, 1) * 40
       const delay = Math.random() * Math.random() * 6
       balls.push({
         index: i,
-        num: 50,
+        num: num,
         type: 1,
         bottom: bottom,
         left: left,

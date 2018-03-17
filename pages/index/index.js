@@ -29,6 +29,13 @@ Page({
     })
   },
   onPlantTap: function (e) {
+    const rid = app.globalData.userInfo.planting_rid
+    if(rid!==-1){
+      wx.navigateTo({
+        url: '../home/index?rid='+rid,
+      })
+      return false
+    }
     const pid = e.target.dataset.pid
     createPlant({
       pid: pid,

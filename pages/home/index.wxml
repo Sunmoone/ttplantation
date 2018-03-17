@@ -10,9 +10,9 @@
       <view class='top'>
         <text class='name'>{{plant.name}}</text>
         <view class='energy'>
-          <view class='num' style='width:{{user.total_energy/5000}}%'></view>
+          <view class='num' style='width:{{record.energy/5000*100}}%'></view>
           <image src='http://10.8.127.110/images/pages/home/group10.png'></image>
-          <text>{{record.energy}}ml/8600ml</text>
+          <text>{{record.energy}}ml/5000ml</text>
         </view>
       </view>
       <button wx:if='{{user.planting_rid===-1}}' class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
@@ -29,6 +29,10 @@
       <template is='icon' data="{{type: 'tree'}}"/>我的果树
       <template is='icon' data="{{type: 'arrow'}}"/>
     </view>
+    <view class='cell my-msg' bindtap="onMyMsgCellTap">
+      <template is='icon' data="{{type: 'voice'}}"/>我的消息
+      <template is='icon' data="{{type: 'arrow'}}"/>
+    </view>
   </view>
   <view class="rank">
     <view class='title'>
@@ -39,9 +43,10 @@
       <template is='avatar' data="{{src: item.avatar_url}}"/> 
       {{item.name}} 
       <view class='water'>
-        <template is='icon' data="{{type:'watering'}}"/>{{item.total_energy}}ml
+        <template is='icon' data="{{type:'watering', onTap: 'onWateringTap'}}"/>{{item.total_energy}}ml
       </view>
     </view>
+    <view class='empty' wx:if='{{friends.length===0}}'>暂无好友</view>
   </view>
   <view class="invite">
     <text class='code'>{{user.uid}}</text>

@@ -9,7 +9,8 @@
     "pages/envelope/index",
     "pages/receive/index",
     "pages/envelope/detail",
-    "pages/dev/index"
+    "pages/dev/index",
+    "pages/home/msg"
   ],
   "window": {
     "backgroundTextStyle": "light",

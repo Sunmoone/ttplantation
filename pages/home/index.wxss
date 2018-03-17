@@ -58,29 +58,39 @@
   margin: 46rpx 0 0 40rpx;
 }
 .plant .cell .top .energy{
-  float: right;
-  margin: 28rpx 40rpx 0 0;
-  position: relative;
+  float:right;
+  margin:43rpx 40rpx 0 0;
+  position:relative;
+  height:32rpx;
+  overflow:hidden;
+  width:350rpx;
+  border-radius:20rpx;
 }
 .plant .cell .top .energy image{
   width: 350rpx;
   height: 32rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .plant .cell .top .energy text{
   position:absolute;
   right:15rpx;
-  top:-5rpx;
+  top:0rpx;
   font-size:10px;
+  line-height: 32rpx;
 }
 .plant .cell .top .energy .num{
   position:absolute;
-top:20rpx;
-left:3rpx;
-width:50%;
-height:28rpx;
-background:linear-gradient(#b8f53c, #3ffa5b);
-border-radius:20rpx 0 0 20rpx;
-
+  top:2rpx;
+  left:3rpx;
+  z-index: 1;
+  width:0;
+  max-width: 100%;
+  height:28rpx;
+  background:linear-gradient(#b8f53c, #3ffa5b);
+  border-radius:20rpx 0 0 20rpx;
+  transition: width .5s ease;
 }
 .plant .cell .button{
   width: 292rpx;
@@ -120,6 +130,11 @@ border-radius:20rpx 0 0 20rpx;
   float: right;
 }
 .plant .cell.my-tree .tt-icon{
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+.plant .cell.my-msg .tt-icon{
   position: relative;
   top: 5px;
   margin-right: 5px;
