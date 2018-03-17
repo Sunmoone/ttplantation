@@ -31,3 +31,7 @@ export function postAddress(data, success) {
 export function getAddress(data, success) {
   request(`address/${data.uid}`, 'GET', data, success)
 }
+
+export function receiveEnergy(data, success) {
+  request(`record/${data.rid}`, 'PUT', data, success)
+}

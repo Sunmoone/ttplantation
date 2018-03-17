@@ -12,10 +12,10 @@
         <view class='energy'>
           <view class='num' style='width:{{user.total_energy/5000}}%'></view>
           <image src='http://10.8.127.110/images/pages/home/group10.png'></image>
-          <text>{{user.total_energy}}ml/8600ml</text>
+          <text>{{record.energy}}ml/8600ml</text>
         </view>
       </view>
-      <button class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
+      <button wx:if='{{user.planting_rid===-1}}' class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <template is="icon" data="{{type:'envelope', onTap:'onEnvelopeTap'}}"/>
       <template is='energy-ball' wx:key="{{index}}" wx:for="{{balls}}"
       data="{{index:item.index,bottom:item.bottom,left:item.left,num:item.num,delay:item.delay,received:item.received,onTap:'onEnergyBallTap'}}"/>

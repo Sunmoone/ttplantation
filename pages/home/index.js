@@ -1,6 +1,6 @@
 import {plantDetail} from '../../services/PlantService.js'
 import {recordDetail} from '../../services/RecordService.js'
-import {listMsg, listFriend, inviteUser, getAddress} from '../../services/UserService.js'
+import {listMsg, listFriend, inviteUser, getAddress, receiveEnergy} from '../../services/UserService.js'
 
 const app = getApp()
 Page({
@@ -54,11 +54,6 @@ Page({
 
     //get user
     this.setData({user: user})
-
-    //get addr
-    getAddress({uid: user.uid}, res => {
-      this.setData({address: res.data})
-    })
   },
   onPhotoCellTap: function() {
     wx.navigateTo({
@@ -72,7 +67,7 @@ Page({
   },
   onPlantTap: function(){
     wx.navigateTo({
-      url: '../my-tree/detail',
+      url: '../my-tree/detail?pid='+this.data.record.pid,
     })
   },
   onEnvelopeTap: function(){
@@ -80,12 +75,14 @@ Page({
       url: '../envelope/index',
     })
   }, 
-  onEnergyBallTap: function(e){
+  onEnergyBallTap: function (e) {
     const balls = this.data.balls
-    balls[e.currentTarget.dataset.index].received = true
-    balls[e.currentTarget.dataset.index].delay = 0
-    this.setData({
-      balls: balls
+    const ball = balls[e.currentTarget.dataset.index]
+    const rid = this.data.record.rid
+    receiveEnergy({ rid: rid, num: ball.num, type: ball.type }, res => {
+      const balls = this.data.balls
+      balls[index].received = true
+      this.setData({ balls: balls, record: res.data })
     })
   },
   onWateringTap: function(){
@@ -128,11 +125,12 @@ Page({
       const left = 165 - y + Math.random(-1, 1) * 20
       const delay = Math.random() * Math.random() * 6
       balls.push({
+        index: i,
         num: 50,
+        type: 1,
         bottom: bottom,
         left: left,
         delay: delay,
-        index: i,
         received: false
       })
     }

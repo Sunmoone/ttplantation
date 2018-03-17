@@ -10,14 +10,13 @@ export function request(url,method,data,success){
       'content-type': 'application/json' // 默认值
     },
     success: function (res) {
-      if(res.data.meta.statusCode!==0){
-        wx.showToast({
-          icon: 'none',
-          title: res.data.meta.msg||'请求失败，请稍候重试',
-        })
-        return false
+      const code = res.data.meta.statusCode
+      const msg = res.data.meta.msg || '请求失败，请稍候重试'
+      if (code === 10001 || code === 0) {
+        success.call(this, res.data)
+      } else {
+        wx.showToast({ icon: 'none', title: msg })
       }
-      success.call(this, res.data)
     },
     fail: function(res){
       wx.showToast({
