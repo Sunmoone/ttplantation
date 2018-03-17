@@ -1,4 +1,8 @@
-// pages/receive/index.js
+import { postAddress } from '../../services/UserService.js'
+
+//获取应用实例
+const app = getApp();
+
 Page({
 
   /**
@@ -9,6 +13,12 @@ Page({
     mobile: '',
     address: '',
     region: [],
+    treeName: ''
+  },
+  onLoad: function(options) {
+    this.setData({
+      treeName: decodeURIComponent(options.name)
+    });
   },
   onSubmit: function(){
     const {name, mobile, region, address} = this.data
@@ -19,15 +29,20 @@ Page({
       })
       return false
     }
-    const requestTask = wx.request({
-      url: 'test.php', //仅为示例，并非真实的接口地址
-      data: this.data,
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
+    var postData = {
+      name: name,
+      mobile: mobile,
+      region: region.toString(),
+      address: address,
+      uid: app.globalData.userInfo.user_id
+    }
+    console.log(postData);
+    postAddress(postData, (res) => {
+      wx.showToast({
+        icon: 'success',
+        title: '地址填写成功',
+      });
+      console.log(res);
     })
   },
   onNameInput:function(e){
@@ -40,12 +55,12 @@ Page({
       mobile: e.detail.value
     })
   },
-  onAddressInput:function(e){
+  onAddressInput: function(e){
     this.setData({
       address: e.detail.value
     })
   },
-  onRegionChange:function(e){
+  onRegionChange: function(e){
     this.setData({
       region: e.detail.value
     })

@@ -1,27 +1,29 @@
 <!--pages/receive/index.wxml-->
-<view class='container'>
-  <view class='form'>
+<view class='address'>
+  <view class='address_title'>您将收获一份自己种植的{{treeName}}</view>
+  <view class='address_form'>
     <view class='form-item'>
       <text class='form-label'>收货人</text>
-      <input placeholder='请输入收货人姓名' bindinput='onNameInput'></input>
+      <input class='form-input' placeholder='请输入收货人姓名' bindinput='onNameInput'></input>
     </view>
     <view class='form-item'>
       <text class='form-label'>联系电话</text>
-      <input type='number' placeholder='请输入联系电话' bindinput='onMobileInput'></input>
+      <input class='form-input' type='number' placeholder='请输入联系电话' bindinput='onMobileInput'></input>
     </view>
     <view class='form-item'>
       <text class='form-label'>所在地区</text>
-      <picker mode="region" bindchange="onRegionChange" value="{{region}}">
+      <picker class='form-input' mode="region" bindchange="onRegionChange" value="{{region}}">
         <text wx:if="{{region[0]&&region[1]&&region[2]}}">{{region[0]}} {{region[1]}} {{region[2]}}</text>
-        <text wx:else>请选择所在地区</text>
+        <text wx:else>请选择</text>
       </picker>
+      <image class='form-more' src='http://s2.pstatp.com/site_new/promotion/landing_page/img/groupCopy@3x_246188f92f30809c3eda7bdb589f5023.png'></image>
     </view>
-    <view class='form-item'>
+    <view class='form-item-address'>
       <text class='form-label'>详细地址</text>
-      <textarea placeholder='请输入详细地址信息，如道路、门牌号、小区、楼栋号、单元室等等' bindinput='onAddressInput'></textarea>
+      <textarea placeholder='请输入详细地址信息' bindinput='onAddressInput'></textarea>
     </view>
   </view>
-  <view class='btn-wrap'>
-    <button bindtap='onSubmit'>填写完成</button>
+  <view class='address_button'>
+    <button bindtap='onSubmit' class='{{!name||!mobile||!region||!address ? "inactive" : "active"}}'>填写完成</button>
   </view>
 </view>

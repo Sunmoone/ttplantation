@@ -1,17 +1,27 @@
 <!--index.wxml-->
 <view class="container">
-    <view class='item' wx:key="{{index}}" wx:for="{{trees}}" bindtap="onItemTap">
-      <image class="left" src="{{item.img}}"></image>
-      <view class="right">
-        <text class="name">{{item.name}}
-        </text>
-        <text class="location">{{item.province}}.{{item.city}}</text>
-        <text class="days">{{days}}天</text>
-      </view>
-      <view class="purchase">
-        <text>我还想要：</text>
-        <button catchtap='onShopTap'>头条放心购</button>
-        <button catchtap='onTaobaoTap'>淘宝网</button>
-      </view>
+    <view wx:if="{{myTrees && myTrees.length}}">
+        <view class='item' wx:key="{{index}}" wx:for="{{myTrees}}" bindtap="onItemTap" data-pid="{{item.pid}}">
+            <view class="left">
+                <image class="left_backImg"
+                    src="{{treeImg[item.pid - 1].data[item.step - 1]}}">
+                </image>
+                <image class="left_icon"
+                    src="{{dayAndIcon[index].icon}}">
+                </image>
+            </view>
+            <view class="right">
+                <text class="name">{{item.pid__name}}</text>
+                <text class="location">{{item.pid__addr}}</text>
+                <text class="days">{{treeStatus[item.step-1]}}，{{dayAndIcon[index].day}}天，{{item.energy}}ml</text>
+            </view>
+            <view class="purchase" wx:if="{{item.complete}}">
+                <text>我还想要更多——{{item.pid__name}}：</text>
+                <button catchtap='onShopTap'>头条放心购</button>
+            </view>
+        </view>
     </view>
+    <view wx:else>
+        <view class="noTree">暂无果树，快去种植一棵吧</view>
+    </view> 
 </view>

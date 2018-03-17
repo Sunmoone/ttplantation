@@ -23,3 +23,7 @@ export function listFriend(data, success) {
 export function inviteUser(data, success) {
   request(`user/${data.uid}/invite/${data.invite_uid}`, 'POST', data, success)
 }
+
+export function postAddress(data, success) {
+  request(`address/${data.uid}`, 'POST', data, success)
+}

@@ -1,26 +1,67 @@
 /* pages/my-tree/detail.wxss */
-.container{
-  padding: 72rpx 80rpx;
+
+.plantDetail {
+  width: 100%;
+  background-color: #fff;
+  margin: 72rpx 0 98rpx 0;
 }
-.container .title{
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 20px;
-  line-height: 28px;
-  color: rgb(34, 34, 34);
+
+.plantDetail_title {
+  font-family: PingFangSC-Semibold;
+  display: block;
+  padding:0 80rpx 0 80rpx;
+  font-size: 40rpx;
+  color: rgb(34,34,34);
+  line-height: 56rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
-.container text{
+
+.plantDetail_icon {
+  width: 220rpx;
+  height: 46rpx;
+  position: relative;
+  top: -20rpx;
+  z-index: 0;
+}
+
+.plantDetail_info {
+  font-family: PingFangSC-Regular;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 26rpx 80rpx 60rpx 80rpx;
+  font-size: 28rpx;
   color: rgb(102,102,102);
-  font-size: 14px;
-  line-height: 20px;
+  line-height: 50rpx;
 }
-.container .subtitle{
-  font-size: 14px;
-  color: rgb(34, 34, 34);
-  margin: 30rpx 0 10rpx 0;
+
+.plantDetail_story-title {
+  font-family: PingFangSC-Medium;
+  display: block;
+  padding: 0 80rpx;
+  font-size: 28rpx;
+  color: rgb(34,34,34);
+}
+
+.plantDetail_story-img {
+  width: 100%;
+  padding: 40rpx 0;
   display: block;
 }
-.container image{
+
+.plantDetail_story-text {
+  font-family: PingFangSC-Regular;
+  display: block;
   width: 100%;
-  margin: 20rpx 0;
+  box-sizing: border-box;
+  padding: 26rpx 80rpx 0 80rpx;
+  font-size: 28rpx;
+  color: rgb(102,102,102);
+  line-height: 50rpx;
 }

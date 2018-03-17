@@ -1,20 +1,24 @@
-// pages/my-tree/detail.js
+import { plantDetail } from '../../services/PlantService.js'
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    plantDetail: {}
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '成县核桃',
-    })
+  onLoad: function (options) { // 请求作物详情,设置页面title
+    plantDetail( {pid: options.pid}, (res)=>{
+      this.setData({
+        plantDetail: res.data
+      });
+    });
   },
 
   /**
