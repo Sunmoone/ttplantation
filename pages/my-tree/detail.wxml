@@ -7,7 +7,7 @@
     <text class="plantDetail_info">{{plantDetail.info}}</text>
     <text class='plantDetail_story-title'>作物故事</text>
     <image class='plantDetail_story-img' 
-    	src="http://10.8.127.110/images/pages/my-tree/walnut.jpg">
+    	src="{{plantDetail.detail_img}}">
     </image>
     <text class='plantDetail_story-text'>{{plantDetail.story}}</text>
 </view>

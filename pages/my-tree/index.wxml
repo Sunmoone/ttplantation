@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-    <view wx:if="{{myTrees && myTrees.length}}">
+    <view wx:if="{{myTrees && myTrees.length}}" class="list">
         <view class='item' wx:key="{{index}}" wx:for="{{myTrees}}" bindtap="onItemTap" data-pid="{{item.pid}}">
             <view class="left">
                 <image class="left_backImg"

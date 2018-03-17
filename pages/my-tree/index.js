@@ -60,7 +60,7 @@ Page({
         var newDayAndIcon = [];
         for (var i = 0; i < res.data.length; i++) {
             newDayAndIcon.push({
-                day: parseInt((new Date().getTime() / 1000 - res.data[i].start_time) / 86400),
+                day: res.data[i].complete ? parseInt((res.data[i].completed_time - res.data[i].start_time) / 86400) : parseInt((new Date().getTime() / 1000 - res.data[i].start_time) / 86400),
                 icon: res.data[i].complete ? this.data.isComplete[1] : this.data.isComplete[0]
             });
         }

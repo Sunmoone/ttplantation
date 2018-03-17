@@ -1,0 +1,5 @@
+<!--pages/my-tree/fangxingo.wxml-->
+<web-view 
+	class=""
+	src="https://haohuo.snssdk.com/channel/list?come_from=5&origin_type=2200&tt_project_id=6#tt_daymode=1&tt_font=m">
+</web-view>

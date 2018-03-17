@@ -1,11 +1,18 @@
 .container{
   width: 100%;
-  min-height: 100%; 
+}
+.list {
+  width: 100%;
 }
 .item{
   width: 100%;
   padding: 40rpx;
   border-bottom: 1px solid #e8e8e8;
+}
+.item::after{
+  content: '';
+  display: table;
+  clear: both;
 }
 .item .left{
   float: left;

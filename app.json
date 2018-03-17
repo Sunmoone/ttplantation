@@ -5,10 +5,10 @@
     "pages/photo/index",
     "pages/my-tree/index",
     "pages/my-tree/detail",
+    "pages/my-tree/fangxingo",
     "pages/envelope/index",
     "pages/receive/index",
     "pages/envelope/detail",
-    "pages/my-tree/taobao",
     "pages/dev/index"
   ],
   "window": {
