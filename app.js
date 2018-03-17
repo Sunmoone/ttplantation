@@ -7,13 +7,21 @@ App({
       success: function(res){
         wx.getUserInfo({
           success: function (res) {
-            console.log(res)
+            that.log(res)
             const userInfo = res.data.userInfo
+            const myUid = wx.getStorageSync('myUid')
+            if(myUid){
+              userInfo.user_id = myUid
+            }else{
+              userInfo.user_id = parseInt(Math.random()*10000)
+            }
+            wx.setStorageSync('myUid', userInfo.user_id)
             that.globalData.userInfo = userInfo
           }
         })
       },
-      fail: function(res){
+      fail: function (res) {
+        that.log(res)
         console.log(res)
       }
     })
@@ -27,6 +35,15 @@ App({
       id: 222,
       name: 'junlongtao',
       avatar: 'xxxxx',
+    }
+  },
+  log: function(data){
+    if(console.log){
+      console.log(data)
+    }else{
+      wx.showToast({
+        title: JSON.stringify(data),
+      })
     }
   }
 })

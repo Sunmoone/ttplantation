@@ -9,6 +9,7 @@ Page({
       setTimeout(function () {
         const user = app.globalData.userInfo
         user.showLoading = false
+        app.log(user)
         getOrSave(user, res => {
           app.globalData.userInfo = res.data
           const rid = res.data.planting_rid
@@ -17,7 +18,5 @@ Page({
           })
         })
       }, 1500)
-      this.myAudio = wx.createAudioContext('myAudio');
-      this.myAudio.play();
     }
 })

@@ -43,7 +43,7 @@
       <template is='avatar' data="{{src: item.avatar_url}}"/> 
       {{item.name}} 
       <view class='water'>
-        <template is='icon' data="{{type:'watering', onTap: 'onWateringTap'}}"/>{{item.total_energy}}ml
+        <template is='icon' data="{{index:index, type:'watering', onTap: 'onWateringTap'}}"/>{{item.total_energy}}ml
       </view>
     </view>
     <view class='empty' wx:if='{{friends.length===0}}'>暂无好友</view>
@@ -51,7 +51,7 @@
   <view class="invite">
     <text class='code'>{{user.uid}}</text>
     <text class='my-code'>我的邀请码</text>
-    <text class='tip'>为好友浇水有奖励可获得3ml能量</text>
+    <text class='tip'>为好友浇水有奖励，可获得3ml能量哦</text>
     <input placeholder='请输入好友邀请码' bindconfirm='onInviteConfirm'></input>
   </view>
   <image class='bottom-img' src='http://10.8.127.110/images/pages/home/bottom-img.png'></image>

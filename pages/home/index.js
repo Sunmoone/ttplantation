@@ -1,8 +1,9 @@
 import {plantDetail} from '../../services/PlantService.js'
 import {recordDetail} from '../../services/RecordService.js'
-import {listMsg, listFriend, inviteUser, getAddress, receiveEnergy} from '../../services/UserService.js'
+import {listMsg, listFriend, inviteUser, getAddress, watering, receiveEnergy} from '../../services/UserService.js'
 
 const app = getApp()
+//app.globalData.userInfo.uid = 12
 Page({
   data: {},
   onLoad: function (options) {
@@ -36,7 +37,7 @@ Page({
         }
       })
     } else {
-      this.renderBalls(76)
+      this.renderBalls(760)
     }
 
     //get photos
@@ -101,14 +102,17 @@ Page({
       this.setData({ balls: balls, record: res.data })
     })
   },
-  onWateringTap: function(e){
+  onWateringTap: function (e) {
     const index = e.currentTarget.dataset.index
     const friends = this.data.friends
     const item = friends[index]
     const user = app.globalData.userInfo
-    watering({uid: user.uid, watering_uid: item.uid}, res=>{
-      friends[index].hasWatering = true
-      this.setData({friends: friends})
+    watering({uid: user.uid, to_uid: item.uid}, res=>{
+      wx.showToast({icon: 'none', title: '浇水成功,获得3ml能量！'})
+      const record = this.data.record
+      record.energy += 3
+      friends[index].total_energy += res.data.rand_num
+      this.setData({friends: friends, record: record})
     })
   },
   onBtnTap: function(){
@@ -139,7 +143,7 @@ Page({
   //time unit: minute
   renderBalls: function(time){
     const balls = []
-    const num = 10
+    const num = 100
     const count = Math.floor(time / num)
     for (let i = 0; i < count; i++) {
       const r = Math.random(.5, 1) * 100 + 60

@@ -16,6 +16,10 @@ export function listMsg(data, success){
   request(`msgs/${data.uid}`, 'GET', data, success)
 }
 
+export function listWateringMsg(data, success) {
+  request(`msgs/watering/${data.uid}`, 'GET', data, success)
+}
+
 export function listFriend(data, success) {
   request(`rank/${data.uid}`, 'GET', data, success)
 }
@@ -36,6 +40,6 @@ export function receiveEnergy(data, success) {
   request(`record/${data.rid}`, 'PUT', data, success)
 }
 
-export function listWateringMsg(data, success) {
-  request(`user/${data.rid}/watering`, 'GET', data, success)
+export function watering(data, success) {
+  request(`user/${data.uid}/watering/${data.to_uid}`, 'POST', data, success)
 }

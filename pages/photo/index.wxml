@@ -3,9 +3,9 @@
   <image class='banner' src='http://10.8.127.110/images/pages/photo/banner.png'></image>
   <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
     <view class='dot'></view>
-    <text>{{item.date}}</text>
+    <text>{{item.time}}</text>
     <view>
-      <image src="http://10.8.127.110/images/pages/photo/{{item.src}}"></image>
+      <image src="{{item.poster}}"></image>
     </view>
   </view>
   <text class='no-more'>暂无更多历程</text>

@@ -193,7 +193,7 @@
 
 
 .invite{
-  margin: 0 auto;
+  margin: 60rpx auto;
 }
 .invite text{
   display: block;
