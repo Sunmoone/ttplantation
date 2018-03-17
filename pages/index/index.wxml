@@ -2,12 +2,12 @@
 <view class='container'>
   <image class='world' src='http://10.8.127.110/images/pages/index/world.png'></image>
   <view class='site walnut'>
-    <image src='http://10.8.127.110/images/pages/index/walnut.jpg' catchtap='onSiteTap'></image>
+    <image data-pid='1' src='http://10.8.127.110/images/pages/index/walnut.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 二郎山</text>
     <button data-pid='1' bindtap='onPlantTap'>我要种核桃</button>
   </view>
   <view class='site apple'>
-    <image src='http://10.8.127.110/images/pages/index/apple.jpg' catchtap='onSiteTap'></image>
+    <image data-pid='2' src='http://10.8.127.110/images/pages/index/apple.jpg' catchtap='onSiteTap'></image>
     <text>甘肃 川坝河谷</text>
     <button data-pid='2' bindtap='onPlantTap'>我要种苹果</button>
   </view>

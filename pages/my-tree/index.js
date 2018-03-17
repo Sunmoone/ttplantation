@@ -44,7 +44,7 @@ Page({
         wx.setNavigationBarTitle({
             title: '我的果树'
         })
-        createdPlantList({ uid: app.globalData.userInfo.user_id }, this.getMyTreesSuc);
+        createdPlantList({ uid: app.globalData.userInfo.uid }, this.getMyTreesSuc);
     },
     onItemTap: function(event){ // 点击卡片跳转到植物详情页；
         wx.navigateTo({

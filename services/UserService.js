@@ -27,3 +27,7 @@ export function inviteUser(data, success) {
 export function postAddress(data, success) {
   request(`address/${data.uid}`, 'POST', data, success)
 }
+
+export function getAddress(data, success) {
+  request(`address/${data.uid}`, 'GET', data, success)
+}

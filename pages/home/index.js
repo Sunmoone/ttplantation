@@ -1,6 +1,6 @@
 import {plantDetail} from '../../services/PlantService.js'
 import {recordDetail} from '../../services/RecordService.js'
-import {listMsg, listFriend, inviteUser} from '../../services/UserService.js'
+import {listMsg, listFriend, inviteUser, getAddress} from '../../services/UserService.js'
 
 const app = getApp()
 Page({
@@ -54,6 +54,11 @@ Page({
 
     //get user
     this.setData({user: user})
+
+    //get addr
+    getAddress({uid: user.uid}, res => {
+      this.setData({address: res.data})
+    })
   },
   onPhotoCellTap: function() {
     wx.navigateTo({

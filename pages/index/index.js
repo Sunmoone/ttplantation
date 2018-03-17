@@ -23,7 +23,7 @@ Page({
     })
   },
   onSiteTap: function(e){
-    const pid = e.target.dataset.id
+    const pid = e.target.dataset.pid
     wx.navigateTo({
       url: '../my-tree/detail?pid='+pid,
     })

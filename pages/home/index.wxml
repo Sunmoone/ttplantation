@@ -22,7 +22,7 @@
     </view>
     <view class='cell photos' bindtap="onPhotoCellTap">
       <template is='icon' data="{{type: 'img'}}"/>种植历程
-      <text>{{photos.length}}</text>
+      <text>{{user.plant_msg_number}}</text>
       <template is='icon' data="{{type: 'arrow'}}"/>
     </view>
     <view class='cell my-tree' bindtap="onMyTreeCellTap">
