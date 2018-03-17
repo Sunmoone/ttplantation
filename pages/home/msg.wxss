@@ -1,13 +1,16 @@
 /* pages/home/msg.wxss */
 .container{
   width: 100%;
-  padding: 20rpx;
+  padding: 40rpx;
 }
 .container .item{
   width: 100%;
   padding: 20rpx 0;
-  min-height: 200rpx;
+  min-height: 135rpx;
   border-bottom: 1px solid #f2f2f2;
+}
+.container .item:last-child{
+  border: none;
 }
 .container .item .content{
   font-weight: bold;
@@ -15,5 +18,14 @@
 }
 .container .item .date{
   font-size: 12px;
+  margin-top: 10rpx;
   color: rgb(187, 187, 187);
+}
+.container .no-more{
+  display: block;
+  width: 100%;
+  margin: 74rpx 0;
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+  text-align: center;
 }

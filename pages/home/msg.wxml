@@ -4,4 +4,5 @@
     <view class='content'>{{item.content}}</view>
     <view class='date'>{{item.time}}</view>
   </view>
+  <view class='no-more'>暂无更多消息</view>
 </view>

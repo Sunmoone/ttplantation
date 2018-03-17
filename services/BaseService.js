@@ -4,6 +4,7 @@ export function request(url,method,data,success){
       title: '加载中',
     })
   }
+  delete data.showLoading
   wx.request({
     url: `http://10.2.195.63:8000/api/v1/${url}/`,
     method: method||'GET',

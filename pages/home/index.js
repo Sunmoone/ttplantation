@@ -94,7 +94,7 @@ Page({
       return false
     }
     const rid = this.data.record.rid
-    receiveEnergy({ rid: rid, num: ball.num, type: ball.type }, res => {
+    receiveEnergy({ rid: rid, num: ball.num, type: ball.type, showLoading: false}, res => {
       const balls = this.data.balls
       balls[index].received = true
       balls[index].delay = 0
@@ -129,6 +129,11 @@ Page({
         title: '好友添加成功',
       })
       this.listFriend()
+    })
+  },
+  onReceiveFruitTap: function(){
+    wx.navigateTo({
+      url: '../receive/index?rid='+this.data.record.rid,
     })
   },
   //time unit: minute

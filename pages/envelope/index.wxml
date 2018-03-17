@@ -1,8 +1,10 @@
 <!--pages/envelope/index.wxml-->
+<import src='/components/icon.wxml'/>
+
 <view class='container'>
   <image class='banner' src='http://10.8.127.110/images/pages/envelope/banner.png'></image>
   <view class='list'>
-    <view class='item' wx:key="{{index}}" wx:for="{{msgs}}" bindtap='onItemTap'>
+    <view class='item' data-index='{{index}}' wx:key="{{index}}" wx:for="{{msgs}}" bindtap='onItemTap'>
       <text class='content'>{{item.title}}</text>
       <text class='date-from'>{{item.time}}
       来自：{{item.from}}</text>
@@ -11,12 +13,13 @@
   <text class='no-more'>暂无更多信件</text>
 </view>
 
-<view class='card'>
-  <view class='card-close'></view>
-  <view class='card-content'>
-    <image src=''></image>
-    <view class='title'></view>
-    <view class='content'></view>
-    <button>分享给好友</button>
+<view class='mask-card' wx:if='{{msg}}'>
+  <view class='card'>
+    <template is='icon' data="{{type: 'close', onTap: 'onCloseTap'}}"></template>
+    <image class='card-cover' src='{{msg.poster}}'></image>
+    <view class='card-content'>
+      <view class='title'>{{msg.title}}</view>
+      <view class='detail'>{{msg.info}}</view>
+    </view>
   </view>
 </view>
