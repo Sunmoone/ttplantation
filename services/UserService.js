@@ -5,7 +5,7 @@ export function createPlant(data, success){
 }
 
 export function getOrSave(data, success){
-  request(`user/${data.user_id}`, 'POST', data, success)
+  request(`user/${data.user_id?data.user_id:data.userId}`, 'POST', data, success)
 }
 
 export function createdPlantList(data, success){
@@ -37,7 +37,7 @@ export function getAddress(data, success) {
 }
 
 export function receiveEnergy(data, success) {
-  request(`record/${data.rid}`, 'PUT', data, success)
+  request(`record/${data.rid}`, 'POST', data, success)
 }
 
 export function watering(data, success) {

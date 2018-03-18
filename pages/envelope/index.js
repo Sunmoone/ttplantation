@@ -6,13 +6,7 @@ const app = getApp()
 
 Page({
   data: {
-    msgs: [{
-      title: 'jkjkljkljklj',
-      info: 'jfdklsjfklfjdfjdfjfjks',
-      time: 1345332222,
-      from: '我的果园',
-      poster: 'http://10.8.127.110/images/pages/photo/sprout.png',
-    }]
+    msgs: []
   },
   onLoad: function(options){
     const user = app.globalData.userInfo

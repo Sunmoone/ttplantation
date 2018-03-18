@@ -6,10 +6,7 @@ const app = getApp()
 const user = app.globalData.userInfo
 Page({
   data: {
-    msgs: [{
-      content: 'fkdjfsdklfjkdsl',
-      time: '2018.03',
-    }]
+    msgs: []
   },
   onLoad: function (options) {
     const user = app.globalData.userInfo

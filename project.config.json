@@ -39,6 +39,12 @@
 					"name": "pages/home/index",
 					"pathName": "pages/home/index",
 					"query": "uid=12"
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": ""
 				}
 			]
 		}

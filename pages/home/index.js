@@ -16,29 +16,28 @@ Page({
         4: 'bloom',
         5: 'fruit'
       }
+      const record = res.data
       this.setData({
-        record: res.data,
+        record: record,
         treeImg: treeImg[res.data.step]
       })
-      plantDetail({pid: res.data.pid}, res => {
+      plantDetail({pid: record.pid}, res => {
         this.setData({
           plant: res.data
         })
       })
+      //get duration, unit:s
+      if (wx.getUseDuration) {
+        wx.getUseDuration({
+          success: res => {
+            const minutes = res.duration / 60
+            this.renderBalls(minutes - record.harvest_energy_today)
+          }
+        })
+      } else {
+        this.renderBalls(70)
+      }
     })
-
-    //get duration, unit:s
-    if (wx.getUseDuration) {
-      wx.getUseDuration({
-        success: function (res) {
-          const minutes = res.data.duration/60
-          const record = this.data.record
-          this.renderBalls(minutes - record.harvest_energy)
-        }
-      })
-    } else {
-      this.renderBalls(760)
-    }
 
     //get photos
     const user = app.globalData.userInfo
@@ -108,7 +107,7 @@ Page({
     const item = friends[index]
     const user = app.globalData.userInfo
     watering({uid: user.uid, to_uid: item.uid}, res=>{
-      wx.showToast({icon: 'none', title: '浇水成功,获得3ml能量！'})
+      app.toast('浇水成功, 获得3ml能量！')
       const record = this.data.record
       record.energy += 3
       friends[index].total_energy += res.data.rand_num
@@ -127,11 +126,12 @@ Page({
   },
   onInviteConfirm: function(e){
     const value = e.detail.value
+    if(!value){
+      return false
+    }
     const user = app.globalData.userInfo
     inviteUser({uid: user.uid, invite_uid: value}, res => {
-      wx.showToast({
-        title: '好友添加成功',
-      })
+      app.toast('好友添加成功')
       this.listFriend()
     })
   },
@@ -143,7 +143,7 @@ Page({
   //time unit: minute
   renderBalls: function(time){
     const balls = []
-    const num = 100
+    const num = 10
     const count = Math.floor(time / num)
     for (let i = 0; i < count; i++) {
       const r = Math.random(.5, 1) * 100 + 60

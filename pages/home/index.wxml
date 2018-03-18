@@ -15,7 +15,7 @@
           <text>{{record.energy}}ml/5000ml</text>
         </view>
       </view>
-      <button wx:if='{{user.planting_rid===-1}}' class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
+      <button wx:if='{{record.rid===-1}}' class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <template is="icon" data="{{type:'envelope', onTap:'onEnvelopeTap'}}"/>
       <template is='energy-ball' wx:key="{{index}}" wx:for="{{balls}}"
       data="{{index:item.index,bottom:item.bottom,left:item.left,num:item.num,delay:item.delay,received:item.received,onTap:'onEnergyBallTap'}}"/>
@@ -40,10 +40,10 @@
     </view>
     <view class='item' wx:key="{{index}}" wx:for="{{friends}}">
       {{index+1}} 
-      <template is='avatar' data="{{src: item.avatar_url}}"/> 
+      <template is='avatar' data="{{src: item.avatar_url}}"/>
       {{item.name}} 
       <view class='water'>
-        <template is='icon' data="{{index:index, type:'watering', onTap: 'onWateringTap'}}"/>{{item.total_energy}}ml
+        <text>{{item.total_energy}}ml</text><template is='icon' data="{{index:index, type:'watering', onTap: 'onWateringTap'}}"/>
       </view>
     </view>
     <view class='empty' wx:if='{{friends.length===0}}'>暂无好友</view>
@@ -55,4 +55,8 @@
     <input placeholder='请输入好友邀请码' bindconfirm='onInviteConfirm'></input>
   </view>
   <image class='bottom-img' src='http://10.8.127.110/images/pages/home/bottom-img.png'></image>
+</view>
+
+<view class='toast' wx:if='{{toast.content}}'>
+  <view class='toast-content'>{toast.content}</view>
 </view>

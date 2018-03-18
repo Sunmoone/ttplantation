@@ -79,6 +79,7 @@
   top:0rpx;
   font-size:10px;
   line-height: 32rpx;
+  z-index: 1;
 }
 .plant .cell .top .energy .num{
   position:absolute;
@@ -110,9 +111,20 @@
 .plant .cell.img .tt-icon.envelope{
   position: absolute;
   bottom: 130rpx;
-  left: 100rpx;
+  left: 70rpx;
   width: 66rpx;
   height: 50rpx;
+  animation: envelope-ani 2s ease infinite;
+  animation-direction: alternate;
+  transform-origin: 40% 40%;
+}
+@keyframes envelope-ani{
+  0%{
+    transform: translate(-15px, 0);
+  }
+  100%{
+    transform: translate(15px, 0);
+  }
 }
 
 .plant .cell.photos{
@@ -159,6 +171,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .rank .item{
+  position: relative;
   margin: 0 0 0 20px;
   line-height: 120rpx;
   padding-right: 20px;
@@ -173,15 +186,20 @@
   margin: 0 20rpx;
 }
 .rank .item .water{
-  float: right;
+  position: absolute;
+  right: 40rpx;
+  top: 0;
   line-height: 132rpx;
 }
 .rank .item .water .tt-icon{
   position: relative;
-  right: 40rpx;
   top: 10rpx;
   width: 58rpx;
   height: 52rpx;
+  margin-left: 20rpx;
+}
+.rank .item .water text{
+  line-height: 120rpx;
 }
 .rank .empty{
   width:100%;
@@ -231,4 +249,18 @@
   height: 80rpx;
   position: relative;
   top: 1px;
+}
+
+.toast{
+  background: rgba(0,0,0,.5);
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  position:fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
 }
