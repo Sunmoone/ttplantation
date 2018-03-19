@@ -35,7 +35,7 @@ Page({
       pid: pid,
       uid: app.globalData.userInfo.uid
     }, function(res){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../home/index?rid='+res.data.rid,
       })
     })

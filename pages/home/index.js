@@ -150,8 +150,17 @@ Page({
       const cta = Math.PI / 6 * i
       const x = Math.floor(Math.sin(cta) * r)
       const y = Math.floor(Math.cos(cta) * r)
-      const bottom = x + 80 + Math.random(-1, 1) * 40
-      const left = 165 - y + Math.random(-1, 1) * 40
+      let bottom = x + 80 + Math.random(-1, 1) * 40
+      let left = 165 - y + Math.random(-1, 1) * 40
+      if(left>305){
+        left = 305
+      }
+      if(left<25){
+        left = 25
+      }
+      if(bottom<80){
+        bottom = 80
+      }
       const delay = Math.random() * Math.random() * 6
       balls.push({
         index: i,

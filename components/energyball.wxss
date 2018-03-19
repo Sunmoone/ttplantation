@@ -1,5 +1,6 @@
 
 .energy-ball{
+  z-index: 2;
   position: absolute;
   bottom: 200rpx;
   left: 120rpx;

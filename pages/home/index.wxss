@@ -56,6 +56,7 @@
   font-size: 14px;
   line-height: 14px;
   margin: 46rpx 0 0 40rpx;
+  text-decoration: underline;
 }
 .plant .cell .top .energy{
   float:right;

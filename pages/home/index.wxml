@@ -5,10 +5,10 @@
 <view class="container">
   <view class="plant">
     <view class='cell img'>
-      <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png" bindtap="onPlantTap"></image>
+      <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png"></image>
       <image wx:if='{{treeImg}}' class='tree-img {{treeImg}}' src='http://10.8.127.110/images/pages/home/{{treeImg}}.png'></image>
       <view class='top'>
-        <text class='name'>{{plant.name}}</text>
+        <text class='name' bindtap="onPlantTap">{{plant.name}}</text>
         <view class='energy'>
           <view class='num' style='width:{{record.energy/5000*100}}%'></view>
           <image src='http://10.8.127.110/images/pages/home/group10.png'></image>

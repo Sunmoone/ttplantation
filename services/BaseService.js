@@ -15,7 +15,6 @@ export function request(url,method,data,success){
       'content-type': 'application/json' // 默认值
     },
     success: function (res) {
-      wx.hideLoading()
       const code = res.data.meta.statusCode
       const msg = res.data.meta.msg || '请求失败，请稍候重试'
       if (code === 0) {
@@ -25,11 +24,9 @@ export function request(url,method,data,success){
       }
     },
     fail: function (res) {
-      wx.hideLoading()()
       getApp().toast(res)
     },
     complete: function(){
-      wx.hideLoading()
     }
   })
 }
