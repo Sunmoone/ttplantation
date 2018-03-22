@@ -23,7 +23,6 @@ Page({
       if (wx.getUseDuration) {
         wx.getUseDuration({
           success: res => {
-            log(res)
             const minutes = res.duration / 60
             this.renderBalls(minutes - record.harvest_energy_today)
           }

@@ -33,8 +33,10 @@ App({
     }
   },
   onHide: function () {
-    this.globalData.myAudio.pause();
-    delete this.globalData.myAudio;
+    if (this.globalData.myAudio) {
+      this.globalData.myAudio.pause();
+      delete this.globalData.myAudio;
+    }
   },
   onError: function (msg) {
     wx.showModal({
