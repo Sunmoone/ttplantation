@@ -1,7 +1,8 @@
 <!--index.wxml-->
+<import src='/components/mask-card.wxml'/>
 <view class="container">
   <image class='banner' src='http://10.8.127.110/images/pages/photo/banner.png'></image>
-  <view class="item" wx:key="{{index}}" wx:for="{{photos}}">
+  <view class="item" data-index='{{index}}' wx:key="{{index}}" wx:for="{{msgs}}" bindtap='onItemTap'>
     <view class='dot'></view>
     <text>{{item.time}}</text>
     <view>
@@ -10,3 +11,5 @@
   </view>
   <text class='no-more'>暂无更多历程</text>
 </view>
+
+<template is='mask-card' data="{{msg: msg}}" wx:if='{{msg}}'/>

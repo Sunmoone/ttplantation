@@ -1,0 +1,14 @@
+<import src='/components/icon.wxml'/>
+<template name='mask-card'>
+  <view class='mask-card'>
+    <view class='card'>
+      <template is='icon' data="{{type: 'close', onTap: 'onCloseTap'}}"></template>
+      <image class='card-cover' src='{{msg.poster}}'></image>
+      <view class='card-content'>
+        <view class='title'>{{msg.title}}</view>
+        <view class='detail'>{{msg.body}}</view>
+        <button open-type="share">分享给好友</button>
+      </view>
+    </view>
+  </view>
+</template>

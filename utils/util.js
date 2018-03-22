@@ -18,5 +18,17 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  log: function(data){
+    wx.showModal({
+      title: 'log',
+      content: JSON.stringify(data),
+    })
+  },
+  toast: function(data){
+    wx.showModal({
+      showCancel: false,
+      content: data
+    })
+  }
 }

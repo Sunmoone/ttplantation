@@ -1,7 +1,7 @@
 import {plantDetail} from '../../services/PlantService.js'
 import {recordDetail} from '../../services/RecordService.js'
 import {listMsg, listFriend, inviteUser, getAddress, watering, receiveEnergy} from '../../services/UserService.js'
-
+import {log, toast} from '../../utils/util.js'
 const app = getApp()
 //app.globalData.userInfo.uid = 12
 Page({
@@ -9,17 +9,10 @@ Page({
   onLoad: function (options) {
     //get plant detail
     recordDetail({rid: options.rid}, res => {
-      const treeImg = {
-        1: 'sprout',
-        2: 'leaf',
-        3: 'trunk',
-        4: 'bloom',
-        5: 'fruit'
-      }
       const record = res.data
       this.setData({
         record: record,
-        treeImg: treeImg[res.data.step]
+        treeImg: ['','sprout','leaf','trunk','bloom','fruit'][res.data.step]
       })
       plantDetail({pid: record.pid}, res => {
         this.setData({
@@ -30,6 +23,7 @@ Page({
       if (wx.getUseDuration) {
         wx.getUseDuration({
           success: res => {
+            log(res)
             const minutes = res.duration / 60
             this.renderBalls(minutes - record.harvest_energy_today)
           }
@@ -127,6 +121,10 @@ Page({
   onInviteConfirm: function(e){
     const value = e.detail.value
     if(!value){
+      return false
+    }
+    if(!/\d+/.test(value)){
+      toast('邀请码为数字')
       return false
     }
     const user = app.globalData.userInfo

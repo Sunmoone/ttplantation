@@ -6,13 +6,13 @@ const app = getApp();
 Page({
     data: {},
     onLoad: function () {
-      const { userId, user_id, nickname, name, avatarUrl, avatar_url } = app.globalData.userInfo
+      const { userId, user_id, nickName, name, avatarUrl, avatar_url } = app.globalData.userInfo
       setTimeout(function(){
         getOrSave({
           user_id: userId || user_id,
-          name: nickname || name || userId || user_id,
+          name: nickName || name || userId || user_id,
           avatar_url: avatarUrl || avatar_url,
-          screen_name: nickname || name || userId || user_id,
+          screen_name: nickName || name || userId || user_id,
           showLoading: false
         }, res => {
           app.globalData.userInfo = res.data

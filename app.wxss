@@ -2,6 +2,7 @@
 @import "/components/icon.wxss";
 @import "/components/avatar.wxss";
 @import "/components/energyball.wxss";
+@import "/components/mask-card.wxss";
 
 page{
   border-top: 1px solid #f2f2f2;
