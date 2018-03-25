@@ -18,6 +18,7 @@ Page({
         this.setData({
           plant: res.data
         })
+        app.globalData.plant = res.data
       })
       //get duration, unit:s
       if (wx.getUseDuration) {
@@ -122,8 +123,9 @@ Page({
     if(!value){
       return false
     }
-    if(!/\d+/.test(value)){
+    if(!/^\d+$/.test(value)){
       toast('邀请码为数字')
+      this.setData({codeValue: ''})
       return false
     }
     const user = app.globalData.userInfo
@@ -131,6 +133,7 @@ Page({
       app.toast('好友添加成功')
       this.listFriend()
     })
+    this.setData({ codeValue: '' })
   },
   onReceiveFruitTap: function(){
     wx.navigateTo({

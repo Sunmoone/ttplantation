@@ -4,17 +4,38 @@ const app = getApp()
 
 Page({
   data: {
-    msgs: []
+    msgs: [],
+    hasMore: true
   },
   onLoad: function(){
-    const {uid} = app.globalData.userInfo
-    listMsg({uid:uid, type:1}, res => {
-      const msgs = res.data.map(item=>{
+    this.listMsg(1)
+  },
+  listMsg: function(page){
+    if(!this.data.hasMore){
+      return false
+    }
+    const size = 1
+    const { uid } = app.globalData.userInfo
+    listMsg({ 
+      uid: uid,
+      page: page,
+      size: size,
+      type: 1
+    }, res => {
+      const items = res.data.map(item => {
         item.time = formatTime(item.time)
         return item
       })
-      this.setData({ msgs: msgs})
+      const msgs = page===1?[]:this.data.msgs
+      this.setData({
+        page: page,
+        msgs: msgs.concat(items),
+        hasMore: items.length<size?false: true
+      })
     })
+  },
+  onViewMoreTap: function(e){
+    this.listMsg(this.data.page+1)
   },
   onItemTap: function (e) {
     const index = e.currentTarget.dataset.index

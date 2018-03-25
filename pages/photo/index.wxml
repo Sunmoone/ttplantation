@@ -9,7 +9,7 @@
       <image src="{{item.poster}}"></image>
     </view>
   </view>
-  <text class='no-more'>暂无更多历程</text>
+  <view class='view-more' bindtap='onViewMoreTap'>{{hasMore?'查看更多':'没有更多了'}}</view>
 </view>
 
 <template is='mask-card' data="{{msg: msg}}" wx:if='{{msg}}'/>

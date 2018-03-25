@@ -6,24 +6,38 @@ const app = getApp()
 
 Page({
   data: {
-    msgs: []
+    msgs: [],
+    hasMore: true
   },
   onLoad: function(options){
+    this.listMsg(1)
+  },
+  listMsg: function(page){
+    if(!this.data.hasMore){
+      return false
+    }
+    const size = 1
     const user = app.globalData.userInfo
     listMsg({
       uid: user.uid,
-      page: 1,
-      size: 10,
+      page: page,
+      size: size,
       type: 1
     }, res => {
-      const msgs = res.data.map(item => {
+      const items = res.data.map(item => {
         item.time = formatTime(item.time)
         return item
       })
+      const msgs = page===1?[]:this.data.msgs
       this.setData({
-        msgs: msgs
+        page: page,
+        msgs: msgs.concat(items),
+        hasMore: res.data.length<size?false: true
       })
     })
+  },
+  onViewMoreTap: function(e){
+    this.listMsg(this.data.page+1)
   },
   onItemTap: function(e){
     const index = e.currentTarget.dataset.index
@@ -34,9 +48,10 @@ Page({
   },
   onShareAppMessage (option) {
     const msg = this.data.msg
+    const {userInfo, plant} = app.globalData
     return {
       title: msg.title,
-      desc: msg.body,
+      desc: `我在头条种植园种了一棵${plant.name}树！好友码是${userInfo.uid}，快来帮我浇水吧~`,
       path: '/pages/guide/index', // ?后面的参数会在分享页面打开时传入onLoad方法
       imageUrl: msg.poster, // 支持本地或远程图片，默认是小程序icon
       success () {

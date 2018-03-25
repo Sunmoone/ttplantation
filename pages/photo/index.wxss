@@ -62,7 +62,7 @@
   font-weight: bold;
 }
 
-.container .no-more{
+.container .view-more{
   display: block;
   width: 100%;
   text-align: center;

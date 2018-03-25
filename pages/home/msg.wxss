@@ -21,7 +21,7 @@
   margin-top: 10rpx;
   color: rgb(187, 187, 187);
 }
-.container .no-more{
+.container .view-more{
   display: block;
   width: 100%;
   margin: 74rpx 0;
