@@ -14,7 +14,7 @@ Page({
     if(!this.data.hasMore){
       return false
     }
-    const size = 1
+    const size = 10
     const { uid } = app.globalData.userInfo
     listMsg({ 
       uid: uid,
@@ -46,9 +46,10 @@ Page({
   },
   onShareAppMessage(option) {
     const msg = this.data.msg
+    const { userInfo, plant } = app.globalData
     return {
       title: msg.title,
-      desc: msg.body,
+      desc: `我在头条种植园种了一棵${plant.name}树！好友码是${userInfo.uid}，快来帮我浇水吧~`,
       path: '/pages/guide/index', // ?后面的参数会在分享页面打开时传入onLoad方法
       imageUrl: msg.poster, // 支持本地或远程图片，默认是小程序icon
       success() {
@@ -58,5 +59,5 @@ Page({
         console.log('分享发布器吊起失败');
       }
     }
-  },
+  }
 })

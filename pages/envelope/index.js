@@ -16,7 +16,7 @@ Page({
     if(!this.data.hasMore){
       return false
     }
-    const size = 1
+    const size = 10
     const user = app.globalData.userInfo
     listMsg({
       uid: user.uid,
