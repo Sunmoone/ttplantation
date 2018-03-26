@@ -16,7 +16,7 @@ Page({
     treeName: ''
   },
   onLoad: function(options) {
-    getAddress({uid: app.globalData.userInfo.user_id || app.globalData.userInfo.uid}, (res) => {
+    getAddress({uid: app.globalData.userInfo.userId || app.globalData.userInfo.uid}, (res) => {
       if (res.data) {
         console.log(res.data);
         this.setData({

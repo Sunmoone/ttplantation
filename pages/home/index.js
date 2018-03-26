@@ -3,7 +3,6 @@ import {recordDetail} from '../../services/RecordService.js'
 import {listMsg, listFriend, inviteUser, getAddress, watering, receiveEnergy} from '../../services/UserService.js'
 import {log, toast} from '../../utils/util.js'
 const app = getApp()
-//app.globalData.userInfo.uid = 12
 Page({
   data: {},
   onLoad: function (options) {
@@ -11,14 +10,22 @@ Page({
     recordDetail({rid: options.rid}, res => {
       const record = res.data
       this.setData({
-        record: record,
-        treeImg: ['','sprout','leaf','trunk','bloom','fruit'][res.data.step]
+        record: record
       })
-      plantDetail({pid: record.pid}, res => {
+      plantDetail({ pid: record.pid }, res => {
+        const plant = res.data
+        const successMsg = {
+          title: `经过30天的不懈努力，你积攒了5000分钟的阅读时间，浇水5000ml，陪伴了${plant.name}的播种、生长、开花、成熟，终于获得了果实！`,
+          body: '请填写你的地址和电话，甘肃成县果园基地将为您邮寄一份果实，共享喜悦！',
+          poster: 'http://10.8.127.110/images/pages/home/fruit-poster.png',
+          showTitle: true,
+          receiveFruit: true
+        }
         this.setData({
-          plant: res.data
+          plant: plant,
+          successMsg: successMsg
         })
-        app.globalData.plant = res.data
+        app.globalData.plant = plant
       })
       //get duration, unit:s
       if (wx.getUseDuration) {
@@ -33,17 +40,13 @@ Page({
       }
     })
 
-    //get photos
-    const user = app.globalData.userInfo
-    listMsg({uid: user.uid}, res => {
-      this.setData({photos: res.data})
-    })
-
     //list friend
     this.listFriend()
 
     //get user
-    this.setData({user: user})
+    this.setData({
+      user: app.globalData.userInfo
+    })
   },
   listFriend: function(){
     const user = app.globalData.userInfo
@@ -89,10 +92,11 @@ Page({
     }
     const rid = this.data.record.rid
     receiveEnergy({ rid: rid, num: ball.num, type: ball.type, showLoading: false}, res => {
+      const record = res.data
       const balls = this.data.balls
       balls[index].received = true
       balls[index].delay = 0
-      this.setData({ balls: balls, record: res.data })
+      this.setData({ balls: balls, record: record})
     })
   },
   onWateringTap: function (e) {
@@ -101,19 +105,17 @@ Page({
     const item = friends[index]
     const user = app.globalData.userInfo
     watering({uid: user.uid, to_uid: item.uid}, res=>{
-      app.toast('浇水成功, 获得3ml能量！')
+      toast('浇水成功, 获得3ml能量！')
       const record = this.data.record
       record.energy += 3
       friends[index].total_energy += res.data.rand_num
       this.setData({friends: friends, record: record})
     })
   },
-  onBtnTap: function(){
-    wx.navigateTo({
-      url: '../receive/index'
-    })
-  },
   onMoreTreeTap: function(){
+    let userInfo = app.globalData.userInfo
+    userInfo.planting_rid = -1
+    app.globalData.userInfo = userInfo
     wx.navigateTo({
       url: '../index/index',
     })
@@ -130,12 +132,16 @@ Page({
     }
     const user = app.globalData.userInfo
     inviteUser({uid: user.uid, invite_uid: value}, res => {
-      app.toast('好友添加成功')
+      toast('好友添加成功')
       this.listFriend()
     })
     this.setData({ codeValue: '' })
   },
-  onReceiveFruitTap: function(){
+  onReceiveFruitTap: function () {
+    this.renderBalls(0)
+    const record = this.data.record
+    record.step = 0
+    this.setData({record: record})
     wx.navigateTo({
       url: '../receive/index?rid='+this.data.record.rid,
     })

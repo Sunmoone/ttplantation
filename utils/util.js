@@ -25,10 +25,15 @@ module.exports = {
       content: JSON.stringify(data),
     })
   },
-  toast: function(data){
-    wx.showModal({
-      showCancel: false,
-      content: data
-    })
+  toast: function (content){
+    try{
+      wx.toast({ title: content })
+    } catch (e) {
+      wx.showModal({
+        title: '',
+        showCancel: false,
+        content: content,
+      })
+    }
   }
 }

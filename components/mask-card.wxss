@@ -1,9 +1,10 @@
 .mask-card{
-  position: fixed;
   top: -1px;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
+  position: fixed;
   background: rgba(0,0,0, .6);
 }
 .mask-card .card{
@@ -24,6 +25,13 @@
   right: -30rpx;
   width: 60rpx;
   height: 60rpx;
+}
+.mask-card .card .card-title{
+  position: absolute;
+  top: -55rpx;
+  left: -15rpx;
+  width: 592rpx;
+  height: 126rpx;
 }
 .mask-card .card .card-cover{
   width: 100%;

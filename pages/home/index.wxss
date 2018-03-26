@@ -27,19 +27,19 @@
   right: 0;
   margin: 0 auto; 
 }
-.plant .cell .tree-img.leaf{
+.plant .cell .tree-img.step-2{
   width: 122rpx;
   height: 184rpx;
 }
-.plant .cell .tree-img.bloom{
-  width: 288rpx;
-  height: 290rpx;
-}
-.plant .cell .tree-img.trunk{
+.plant .cell .tree-img.step-3{
   width:268rpx;
   height: 290rpx;
 }
-.plant .cell .tree-img.fruit{
+.plant .cell .tree-img.step-4{
+  width: 288rpx;
+  height: 290rpx;
+}
+.plant .cell .tree-img.step-5{
   width: 296rpx;
   height: 300rpx;
 }
@@ -178,6 +178,19 @@
   padding-right: 20px;
   border-bottom: 1px solid rgb(241, 241, 241);
 }
+.rank .item .tt-icon.gold,
+.rank .item .tt-icon.silver,
+.rank .item .tt-icon.bronze{
+  width: 36rpx;
+  height: 50rpx;
+  position: relative;
+  top: 20rpx;
+}
+.rank .item .rank-num{
+  width: 36rpx;
+  display: inline-block;
+  text-align: center;
+}
 .rank .item .tt-avatar{
   width:76rpx;
   height:76rpx;
@@ -264,4 +277,12 @@
   left: 0;
   right: 0;
   transform: translate(0, -50%);
+}
+
+.mask-card .card .close{
+  display: none;
+}
+.mask-card .card .card-content .title{
+  font-size: 12px;
+  color: #666;
 }

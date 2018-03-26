@@ -2,11 +2,13 @@
 <import src='/components/icon.wxml'/>
 <import src='/components/avatar.wxml'/>
 <import src='/components/energyball.wxml'/>
+<import src='/components/mask-card.wxml'/>
 <view class="container">
   <view class="plant">
     <view class='cell img'>
       <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png"></image>
-      <image wx:if='{{treeImg}}' class='tree-img {{treeImg}}' src='http://10.8.127.110/images/pages/home/{{record.pid}}-{{treeImg}}.png'></image>
+      <image wx:if='{{record.step}}' class='tree-img step-{{record.step}}' src='http://10.8.127.110/images/pages/home/{{record.pid}}-{{record.step}}.png'></image>
+      <button wx:else class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <view class='top'>
         <text class='name' bindtap="onPlantTap">{{plant.name}}</text>
         <view class='energy'>
@@ -15,7 +17,6 @@
           <text>{{record.energy}}ml/5000ml</text>
         </view>
       </view>
-      <button wx:if='{{record.rid===-1}}' class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <template is="icon" data="{{type:'envelope', onTap:'onEnvelopeTap'}}"/>
       <template is='energy-ball' wx:key="{{index}}" wx:for="{{balls}}"
       data="{{index:item.index,bottom:item.bottom,left:item.left,num:item.num,delay:item.delay,received:item.received,onTap:'onEnergyBallTap'}}"/>
@@ -39,7 +40,8 @@
       好友排名
     </view>
     <view class='item' wx:key="{{index}}" wx:for="{{friends}}">
-      {{index+1}} 
+      <template wx:if='{{index<3}}' is='icon' data="{{type: index===0?'gold':index===1?'silver':'bronze'}}"></template>
+      <text wx:else class='rank-num'>{{index+1}}</text> 
       <template is='avatar' data="{{src: item.avatar_url}}"/>
       {{item.name}} 
       <view class='water'>
@@ -60,3 +62,4 @@
 <view class='toast' wx:if='{{toast.content}}'>
   <view class='toast-content'>{toast.content}</view>
 </view>
+<template is='mask-card' data="{{msg: successMsg, onBtnTap: 'onReceiveFruitTap'}}" wx:if='{{record.step===5}}'/>

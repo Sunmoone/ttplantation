@@ -4,10 +4,12 @@
     <view class='card'>
       <template is='icon' data="{{type: 'close', onTap: 'onCloseTap'}}"></template>
       <image class='card-cover' src='{{msg.poster}}'></image>
+      <image wx:if='{{msg.showTitle}}' class='card-title' src='http://10.8.127.110/images/components/fruit-title.png'></image>
       <view class='card-content'>
         <view class='title'>{{msg.title}}</view>
         <view class='detail'>{{msg.body}}</view>
-        <button open-type="share">分享给好友</button>
+        <button wx:if='{{msg.receiveFruit}}' bindtap='{{onBtnTap}}'>填写地址</button>
+        <button wx:else open-type="share">分享给好友</button>
       </view>
     </view>
   </view>
