@@ -9,7 +9,7 @@ App({
       success: function(res){
         wx.getUserInfo({
           success: function (res) {
-            that.globalData.userInfo = res.userInfo?res.userInfo:res.data
+            that.globalData.userInfo = res.userInfo?res.userInfo:res.data.userInfo
           }
         })
       },
