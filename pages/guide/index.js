@@ -3,9 +3,10 @@ import { log } from '../../utils/util.js'
 
 // 引导页；
 const app = getApp();
-
 Page({
-    data: {},
+    data: {
+      version: app.globalData.version
+    },
     onLoad: function () {
       setTimeout(function () {
         wx.login({
