@@ -35,10 +35,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "pages/home/index",
-					"pathName": "pages/home/index",
-					"query": "uid=12"
+					"id": 1,
+					"name": "pages/guide/index",
+					"pathName": "pages/guide/index",
+					"query": ""
 				},
 				{
 					"id": -1,

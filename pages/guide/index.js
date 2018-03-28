@@ -13,7 +13,7 @@ Page({
           success: function (res) {
             wx.getUserInfo({
               success: function (res) {
-                app.globalData.userInfo = res.userInfo ? res.userInfo : res.data ? res.data : res.data.userInfo
+                app.globalData.userInfo = res.userInfo ? res.userInfo : res.data.userInfo ? res.data.userInfo : res.data
                 const { 
                   userId, user_id, nickName, name, avatarUrl, avatar_url 
                 } = app.globalData.userInfo

@@ -253,7 +253,7 @@
   height: 88rpx;
   text-align: center;
   font-size: 14px;
-  margin: 56rpx 0 300rpx 0;
+  margin: 56rpx 0 0 0;
   border: 2px solid rgb(24, 217, 111);
   border-radius: 200rpx;
 }

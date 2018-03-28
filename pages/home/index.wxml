@@ -6,7 +6,7 @@
 <view class="container">
   <view class="plant">
     <view class='cell img'>
-      <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png"></image>
+      <image class='bg' src="http://10.8.127.110/images/pages/home/bg.png" bindlongtap='onBgLongTap'></image>
       <image wx:if='{{record.step}}' class='tree-img step-{{record.step}}' src='http://10.8.127.110/images/pages/home/{{record.pid}}-{{record.step}}.png'></image>
       <button wx:else class='button' bindtap='onMoreTreeTap'>再种一棵树</button>
       <view class='top'>

@@ -17,7 +17,7 @@ App({
       avatar_url: uid,
       screen_name: uid
     },
-    version: '1.1.8'
+    version: '1.2.0'
   },
   onHide: function () {
     if (this.globalData.myAudio) {

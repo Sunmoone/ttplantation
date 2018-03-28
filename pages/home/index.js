@@ -31,6 +31,7 @@ Page({
       if (wx.getUseDuration) {
         wx.getUseDuration({
           success: res => {
+            log(res)
             const minutes = res.duration / 60
             this.renderBalls(minutes - record.harvest_energy_today)
           }
@@ -127,7 +128,6 @@ Page({
     }
     if(!/^\d+$/.test(value)){
       toast('邀请码为数字')
-      this.setData({codeValue: ''})
       return false
     }
     const user = app.globalData.userInfo
@@ -135,7 +135,6 @@ Page({
       toast('好友添加成功')
       this.listFriend()
     })
-    this.setData({ codeValue: '' })
   },
   onReceiveFruitTap: function () {
     this.renderBalls(0)
@@ -144,6 +143,12 @@ Page({
     this.setData({record: record})
     wx.navigateTo({
       url: '../receive/index?rid='+this.data.record.rid,
+    })
+  },
+  onBgLongTap: function(){
+    wx.setStorageSync('hasTip', 'false')
+    wx.navigateTo({
+      url: '../index/index',
     })
   },
   //time unit: minute
